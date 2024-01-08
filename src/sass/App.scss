@@ -1,5 +1,6 @@
-@use './variables/colors' as *;
-@use './variables/fonts' as *;
+@use './helpers/colors' as *;
+@use './helpers/fonts' as *;
+@use './helpers/mixins' as *;
 
 
 *{
@@ -8,12 +9,20 @@
 }
 
 
+// default styles  =>  small screens
 
 header{
     /* width: 100%; */
-    display: flex;
-    justify-content: space-between;
-    padding: 0 292px;
+    // display: flex;
+
+    @include flex(row,center,unset);
+
+    // justify-content: space-between;
+    // padding: 0 292px;
+    gap: 5.06rem;
+    > div {
+        @include flex(row,space-between,center);
+    }
 }
 
 nav{
@@ -21,7 +30,7 @@ nav{
     ul{
         display: flex;
         list-style-type: none;
-        gap: 28px;
+        gap: 1.75rem; //28px
         padding: 0;
         align-items: center;
         height: 100%;
@@ -37,17 +46,16 @@ nav{
     }
 }
 
-
-main{
-    padding: 0 292px;
-}
-
 footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
     background-color: $secondary-color3;
-    padding: 0 292px;
+    // padding: 0 292px;
+
+    > div {
+        @include flex(row,space-between,center);
+    }
 
     img{
         width: 162px;
@@ -69,7 +77,39 @@ footer{
     }
 }
 
+main{
+    > div {
+        @include flex(row,space-between,center);
+    }
+}
+
+.booking-form{
+    display: grid;
+    max-width: 200px;
+    gap: 20px
+}
+
+
 .grid{
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+.container{
+    @include make-container();
+    max-width: 858px;
+}
+
+/* Media Queries */
+@media (width > 600px){
+    .container{
+        max-width: 500px;
+    }
+}
+
+
+@media (width > 900px) {
+    .container{
+        max-width: 858px;
+    }
 }
