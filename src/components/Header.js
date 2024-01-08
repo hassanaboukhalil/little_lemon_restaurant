@@ -1,11 +1,16 @@
 import React from 'react'
 import Nav from './Nav'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
         <header>
-            <img src="./images/little-lemon-logo.png" alt="little lemon logo"/>
-            <Nav />
+            <div className='container'>
+                <Link to='/' className='nav-item'>
+                    <img src="./images/little-lemon-logo.png" alt="little lemon logo"/>
+                </Link>
+                <Nav />
+            </div>
         </header>
     )
 }
