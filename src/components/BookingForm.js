@@ -38,28 +38,28 @@ function BookingForm({times_state_obj}) {
         //     <input type="submit" value="Make Your reservation" /> */}
         // </form>
         <form className='booking-form'>
-            <FormControl >
+            <FormControl role='group'>
                 <FormLabel>Choose date</FormLabel>
-                <Input type='date' {...formik.getFieldProps("date")} />
+                <Input type='date' {...formik.getFieldProps("date")} aria-label='Enter the booking date' />
             </FormControl>
-            <FormControl >
+            <FormControl role='group'>
                 <FormLabel>Choose time</FormLabel>
-                <Select {...formik.getFieldProps("time")}>
+                <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
                     <AvailableTimes times_state_obj={times_state_obj}/>
                 </Select>
             </FormControl>
-            <FormControl >
+            <FormControl role='group'>
                 <FormLabel>Number of guests</FormLabel>
-                <Input type="number" min="1" max="10" {...formik.getFieldProps("guests_nb")}/>
+                <Input type="number" min="1" max="10" {...formik.getFieldProps("guests_nb")} aria-label='Enter the number of guests'/>
             </FormControl>
-            <FormControl >
+            <FormControl role='group'>
                 <FormLabel>Occasion</FormLabel>
                 <Select {...formik.getFieldProps("occasion")}>
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </Select>
             </FormControl>
-            <Button w="100%" bg="#7f5ad5" color="white" isLoading={false}>
+            <Button w="100%" bg="#7f5ad5" color="white" isLoading={false} aria-label='submit the booking information'>
                 Submit
             </Button>
         </form>
