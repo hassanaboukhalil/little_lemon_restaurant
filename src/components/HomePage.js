@@ -7,7 +7,9 @@ function HomePage() {
   return (
     <>
         <Header />
-        <Main />
+        <Main>
+          <p>hii</p>
+        </Main>
         <Footer />
     </>
   )
