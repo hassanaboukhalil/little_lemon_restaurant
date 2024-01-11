@@ -10,7 +10,13 @@ function updateTimes(availableTimes, date){
     return [...newTimes]
 }
 
-
+const initializeTimes = () => {
+    return (
+        [
+            '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
+        ]
+    )
+}
 
 function BookingPage() {
     // const [availableTimes, setavailableTimes] = useState([])
@@ -28,17 +34,11 @@ function BookingPage() {
     //     return initialTimes
     // }
 
-    const initializeTimes = () => {
-        return (
-            [
-                '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
-            ]
-        )
-    }
+    
 
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes()) // initializeTimes
 
-    let times_state_obj = {
+    let times_reducer_obj = {
         availableTimes,
         dispatch
     }
@@ -50,11 +50,14 @@ function BookingPage() {
         <>
             <Header />
             <Main>
-                <BookingForm times_state_obj={times_state_obj}/>
+                <BookingForm times_reducer_obj={times_reducer_obj}/>
             </Main>
             <Footer />
         </>
     )
 }
 
+export {initializeTimes , updateTimes};
+
 export default BookingPage
+

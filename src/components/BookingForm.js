@@ -5,7 +5,7 @@ import React from 'react'
 import AvailableTimes from './availableTimes'
 // import AvailableTimes
 
-function BookingForm({times_state_obj}) {
+function BookingForm({times_reducer_obj}) {
     const formik = useFormik({
         initialValues: {
             date: new Date().toISOString().split('T')[0],
@@ -45,7 +45,7 @@ function BookingForm({times_state_obj}) {
             <FormControl role='group'>
                 <FormLabel>Choose time</FormLabel>
                 <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
-                    <AvailableTimes times_state_obj={times_state_obj}/>
+                    <AvailableTimes times_reducer_obj={times_reducer_obj}/>
                 </Select>
             </FormControl>
             <FormControl role='group'>
