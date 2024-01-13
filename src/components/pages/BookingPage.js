@@ -1,22 +1,30 @@
-import React, { useReducer } from 'react'
-import Header from './Header'
-import BookingForm from './BookingForm'
-import Footer from './Footer'
-import Main from './Main'
+import React, { useEffect, useReducer } from 'react'
+import Header from '../layout/Header'
+import BookingForm from '../others/BookingForm'
+import Footer from '../layout/Footer'
+import Main from '../layout/Main'
+import { fetchAPI , submitAPI} from '../api'
+import { redirect, useNavigate } from 'react-router-dom'
 
-function updateTimes(availableTimes, date){
-    let newTimes = [...availableTimes]
+function updateTimes(dateState,selectedDate){
+    // let newTimes = [...availableTimes]
     // setavailableTimes(newTimes)
-    return [...newTimes]
+
+    let available_times = [...fetchAPI(selectedDate)]
+    return [...available_times]
 }
 
 const initializeTimes = () => {
+    let today_times = [...fetchAPI(new Date())]
     return (
-        [
-            '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
-        ]
+        // [
+        //     '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
+        // ]
+        today_times
     )
 }
+
+
 
 function BookingPage() {
     // const [availableTimes, setavailableTimes] = useState([])
@@ -43,16 +51,21 @@ function BookingPage() {
         dispatch
     }
 
-    // initializeTimes()
+    let navigate = useNavigate()
+
+
+    const submitForm = (formData) => {
+        if(submitAPI(formData)){
+            navigate("/confirmed-booking")
+        }
+    }
 
 
     return (
         <>
-            <Header />
             <Main>
-                <BookingForm times_reducer_obj={times_reducer_obj}/>
+                <BookingForm times_reducer_obj={times_reducer_obj} submitForm={submitForm}/>
             </Main>
-            <Footer />
         </>
     )
 }

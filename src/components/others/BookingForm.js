@@ -1,19 +1,35 @@
 import { Button, FormControl, FormLabel, Input, Select } from '@chakra-ui/react'
-import { useFormik } from 'formik'
+import { Formik, useFormik } from 'formik'
 // import { useFormik } from 'formik'
 import React from 'react'
 import AvailableTimes from './availableTimes'
 // import AvailableTimes
 
-function BookingForm({times_reducer_obj}) {
+function BookingForm({times_reducer_obj , submitForm}) {
     const formik = useFormik({
         initialValues: {
             date: new Date().toISOString().split('T')[0],
             time: "17",
             guests_nb: 1,
             occasion: "Birthday"
+        },
+        onSubmit: (values) => {
+            submitForm(values)
+            console.log(submitForm)
+            // alert("onsubmit formik")
         }
     })
+
+    function date_changed(e){
+        formik.handleChange(e)
+        let selected_date = formik.values.date
+        times_reducer_obj.dispatch(selected_date)
+    }
+
+    function handle_submit(e){
+        e.preventDefault();
+        formik.handleSubmit(e)
+    }
 
     return (
         // <form className='booking-form'>
@@ -37,10 +53,10 @@ function BookingForm({times_reducer_obj}) {
         //     </select>
         //     <input type="submit" value="Make Your reservation" /> */}
         // </form>
-        <form className='booking-form'>
+        <form className='booking-form' onSubmit={handle_submit}>
             <FormControl role='group'>
                 <FormLabel>Choose date</FormLabel>
-                <Input type='date' {...formik.getFieldProps("date")} aria-label='Enter the booking date' />
+                <Input type='date' {...formik.getFieldProps("date")} onChange={date_changed} aria-label='Enter the booking date' />
             </FormControl>
             <FormControl role='group'>
                 <FormLabel>Choose time</FormLabel>
@@ -59,7 +75,7 @@ function BookingForm({times_reducer_obj}) {
                     <option>Anniversary</option>
                 </Select>
             </FormControl>
-            <Button w="100%" bg="#7f5ad5" color="white" isLoading={false} aria-label='submit the booking information'>
+            <Button type="submit" w="100%" bg="#7f5ad5" color="white" isLoading={false} aria-label='submit the booking information'>
                 Submit
             </Button>
         </form>
