@@ -1,15 +1,10 @@
-import React, { useEffect, useReducer } from 'react'
-import Header from '../layout/Header'
+import React, { useReducer } from 'react'
 import BookingForm from '../others/BookingForm'
-import Footer from '../layout/Footer'
 import Main from '../layout/Main'
 import { fetchAPI , submitAPI} from '../api'
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function updateTimes(dateState,selectedDate){
-    // let newTimes = [...availableTimes]
-    // setavailableTimes(newTimes)
-
     let available_times = [...fetchAPI(selectedDate)]
     return [...available_times]
 }
@@ -27,24 +22,8 @@ const initializeTimes = () => {
 
 
 function BookingPage() {
-    // const [availableTimes, setavailableTimes] = useState([])
 
-    // const intz_times = [
-    //     '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
-    // ]
-
-    // this will create the initial state for the availableTimes.
-    // function initializeTimes(){
-    //     let initialTimes = [
-    //         '17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'
-    //     ]
-    //     // setavailableTimes(initialTimes)
-    //     return initialTimes
-    // }
-
-    
-
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes()) // initializeTimes
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
 
     let times_reducer_obj = {
         availableTimes,

@@ -6,25 +6,25 @@ export default function Nav() {
     <nav role='navigation'>
         <ul>
             <li>
-                <Link to='/' className='nav-item' >Home</Link>
+                <Link to='/' className='nav-item' aria-label="On Click">Home</Link>
             </li>
             {/* <li>
                 <a href='' role='button' >About</a>
             </li> */}
             <li>
-                <Link to='/booking-page' className='nav-item'>About</Link>
+                <Link to='/booking-page' className='nav-item' aria-label="On Click">About</Link>
             </li>
             <li>
-                <a href='' role='button' >Menu</a>
+                <a href='' role='button' aria-label="On Click">Menu</a>
             </li>
             <li>
-                <a href='' role='button' >Reservations</a>
+                <a href='' role='button' aria-label="On Click">Reservations</a>
             </li>
             <li>
-                <a href='' role='button' >Order Online</a>
+                <a href='' role='button' aria-label="On Click">Order Online</a>
             </li>
             <li>
-                <a href='' role='button' >Login</a>
+                <a href='' role='button' aria-label="On Click">Login</a>
             </li>
         </ul>
     </nav>

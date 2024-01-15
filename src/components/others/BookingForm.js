@@ -1,10 +1,8 @@
 import { Button, FormControl, FormErrorMessage, FormLabel, Input, Select } from '@chakra-ui/react'
-import { Formik, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
-// import { useFormik } from 'formik'
 import React from 'react'
 import AvailableTimes from './availableTimes'
-// import AvailableTimes
 
 function BookingForm({times_reducer_obj , submitForm}) {
     const formik = useFormik({
@@ -16,7 +14,6 @@ function BookingForm({times_reducer_obj , submitForm}) {
         },
         onSubmit: (values) => {
             submitForm(values)
-            // console.log(submitForm)
         },
         validationSchema: Yup.object({
             date: Yup.date().min(new Date().toISOString().split('T')[0], "Date must be today or later").required("Required"),
@@ -40,27 +37,6 @@ function BookingForm({times_reducer_obj , submitForm}) {
     }
 
     return (
-        // <form className='booking-form'>
-        //     {/* <label htmlFor="res-date">Choose date</label>
-        //     <input type="date" id="res-date" />
-        //     <label htmlFor="res-time">Choose time</label>
-        //     <select id="res-time ">
-        //         <option>17:00</option>
-        //         <option>18:00</option>
-        //         <option>19:00</option>
-        //         <option>20:00</option>
-        //         <option>21:00</option>
-        //         <option>22:00</option>
-        //     </select>
-        //     <label htmlFor="guests">Number of guests</label>
-        //     <input type="number" placeholder="1" min="1" max="10" id="guests" />
-        //     <label htmlFor="occasion">Occasion</label>
-        //     <select id="occasion">
-        //         <option>Birthday</option>
-        //         <option>Anniversary</option>
-        //     </select>
-        //     <input type="submit" value="Make Your reservation" /> */}
-        // </form>
         <form className='booking-form' onSubmit={handle_submit}>
             <FormControl role='group' isInvalid={formik.errors.date}>
                 <FormLabel>Choose date</FormLabel>
@@ -87,7 +63,7 @@ function BookingForm({times_reducer_obj , submitForm}) {
                     <option>not specified</option>
                 </Select>
             </FormControl>
-            <Button type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.date || formik.errors.guests_nb) ? true : false} isLoading={false} aria-label='submit the booking information'>
+            <Button type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.date || formik.errors.guests_nb) ? true : false} isLoading={false} aria-label="On Click">
                 Submit
             </Button>
         </form>
