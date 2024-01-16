@@ -1,4 +1,4 @@
-import { Button, FormControl, FormErrorMessage, FormLabel, Input, Select } from '@chakra-ui/react'
+import { Button, FormControl, FormErrorMessage, FormLabel, Input, Select, Heading } from '@chakra-ui/react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import React from 'react'
@@ -38,6 +38,7 @@ function BookingForm({times_reducer_obj , submitForm}) {
 
     return (
         <form className='booking-form' onSubmit={handle_submit}>
+            <Heading w="100%">Book a table :</Heading>
             <FormControl role='group' isInvalid={formik.errors.date}>
                 <FormLabel>Choose date</FormLabel>
                 <Input type='date' {...formik.getFieldProps("date")} onChange={date_changed} aria-label='Enter the booking date' required/>
@@ -47,6 +48,14 @@ function BookingForm({times_reducer_obj , submitForm}) {
                 <FormLabel>Choose time</FormLabel>
                 <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
                     <AvailableTimes times_reducer_obj={times_reducer_obj}/>
+                    {/* {
+                        times_reducer_obj.availableTimes
+                        .map(time => {
+                            return (
+                                <option key={time}>{time}</option>
+                            )
+                        })
+                    } */}
                 </Select>
                 <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
             </FormControl>
