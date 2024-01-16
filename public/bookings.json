@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "date": "2024-01-16",
+        "time": "18:00",
+        "table": 3,
+        "name": "John Doe",
+        "contact": "john@example.com"
+    },
+    {
+        "id": 2,
+        "date": "2024-01-17",
+        "time": "19:00",
+        "table": 1,
+        "name": "Jane Smith",
+        "contact": "jane@example.com"
+    },
+    {
+        "id": 3,
+        "date": "2024-01-18",
+        "time": "18:00",
+        "table": 2,
+        "name": "Bob Johnson",
+        "contact": "bob@example.com"
+    },
+    {
+        "id": 4,
+        "date": "2024-01-18",
+        "time": "20:00",
+        "table": 4,
+        "name": "Alice Brown",
+        "contact": "alice@example.com"
+    },
+    {
+        "id": 5,
+        "date": "2024-01-19",
+        "time": "17:00",
+        "table": 3,
+        "name": "Charlie White",
+        "contact": "charlie@example.com"
+    },
+    {
+        "id": 6,
+        "date": "2024-01-19",
+        "time": "19:00",
+        "table": 1,
+        "name": "Diana Black",
+        "contact": "diana@example.com"
+    },
+    {
+        "id": 7,
+        "date": "2024-01-20",
+        "time": "18:00",
+        "table": 2,
+        "name": "Eva Green",
+        "contact": "eva@example.com"
+    },
+    {
+        "id": 8,
+        "date": "2024-01-20",
+        "time": "20:00",
+        "table": 4,
+        "name": "Frank Red",
+        "contact": "frank@example.com"
+    },
+    {
+        "id": 9,
+        "date": "2024-01-21",
+        "time": "21:00",
+        "table": 3,
+        "name": "Grace Yellow",
+        "contact": "grace@example.com"
+    },
+    {
+        "id": 10,
+        "date": "2024-01-21",
+        "time": "22:00",
+        "table": 1,
+        "name": "Harry Purple",
+        "contact": "harry@example.com"
+    },
+    {
+        "id": 11,
+        "date": "2024-01-22",
+        "time": "17:00",
+        "table": 2,
+        "name": "Ivy Orange",
+        "contact": "ivy@example.com"
+    },
+    {
+        "id": 12,
+        "date": "2024-01-22",
+        "time": "19:00",
+        "table": 4,
+        "name": "Jack Blue",
+        "contact": "jack@example.com"
+    },
+    {
+        "id": 13,
+        "date": "2024-01-23",
+        "time": "18:00",
+        "table": 3,
+        "name": "Katherine Gray",
+        "contact": "katherine@example.com"
+    },
+    {
+        "id": 14,
+        "date": "2024-01-23",
+        "time": "20:00",
+        "table": 1,
+        "name": "Leo Brown",
+        "contact": "leo@example.com"
+    },
+    {
+        "id": 15,
+        "date": "2024-01-24",
+        "time": "21:00",
+        "table": 2,
+        "name": "Mia White",
+        "contact": "mia@example.com"
+    }
+]
