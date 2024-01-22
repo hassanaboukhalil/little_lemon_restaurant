@@ -4,11 +4,11 @@ import * as Yup from 'yup'
 import React from 'react'
 import AvailableTimes from './availableTimes'
 
-function BookingForm({times_reducer_obj , submitForm}) {
+function BookingForm({times_reducer_obj , submitForm }) {
     const formik = useFormik({
         initialValues: {
             date: new Date().toISOString().split('T')[0],
-            time: "17",
+            time: "17:00",
             guests_nb: 2,
             occasion: "Birthday"
         },
@@ -27,8 +27,7 @@ function BookingForm({times_reducer_obj , submitForm}) {
 
     function date_changed(e){
         formik.handleChange(e)
-        let selected_date = formik.values.date
-        times_reducer_obj.dispatch(selected_date)
+        times_reducer_obj.dispatch({selectedDate: e.target.value})
     }
 
     function handle_submit(e){
@@ -48,14 +47,6 @@ function BookingForm({times_reducer_obj , submitForm}) {
                 <FormLabel>Choose time</FormLabel>
                 <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
                     <AvailableTimes times_reducer_obj={times_reducer_obj}/>
-                    {/* {
-                        times_reducer_obj.availableTimes
-                        .map(time => {
-                            return (
-                                <option key={time}>{time}</option>
-                            )
-                        })
-                    } */}
                 </Select>
                 <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
             </FormControl>
