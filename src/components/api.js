@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
 
 const useFetchAPI = () => {
-    const [bookings, setBookings] = useState(
-    [
-      {
-        id: 13,
-        date: "",
-        time: "",
-        table: 3,
-        name: "Katherine Gray",
-        contact: "katherine@example.com"
-      }
-    ]);
+
+    const [bookings, setBookings] = useState([])
 
     useEffect(() => {
       const fetchData = async () => {
