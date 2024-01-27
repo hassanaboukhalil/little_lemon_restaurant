@@ -12,55 +12,59 @@
 // default styles  =>  small screens
 
 header{
-    /* width: 100%; */
-    // display: flex;
-
-    @include flex(row,center,unset);
-
-    // justify-content: space-between;
-    // padding: 0 292px;
-    gap: 5.06rem;
     > div {
-        @include flex(row,space-between,center);
-    }
+            @include flex(row,center,center);
+            img{
+                width: 147px;
+                height: 70px;
+            }
+            .hamburger-icon{
+                padding-left: 0.75rem;
+                position: absolute;
+                left: 0;
+            }
+            nav{
+                position: absolute;
+                left: 0;//0.75rem
+                top: 0;
+                background-color: beige;
+                height: 100vh;
+                width: 75vw;
+                ul{
+                    list-style-type: none;
+                    gap: 1.75rem;
+                    padding: 0;
+                    li{
+                        font-size: $nav;
+                        padding: 21px 16px;
+                        border-bottom: solid 1px #D9D9D9;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .beside-nav{
+                width: 25vw;
+                position: absolute;
+                right: 0;
+                height: 100vh;
+                top: 0;
+                background-color: #252525B8;
+            }
+        }
 }
 
-nav{
-    height: inherit;
-    ul{
-        display: flex;
-        list-style-type: none;
-        gap: 1.75rem; //28px
-        padding: 0;
-        align-items: center;
-        height: 100%;
-    }
-    li{
-        height: max-content;
-    }
-    a{
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: $font3;
-    }
-}
 
 footer{
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     background-color: $secondary-color3;
-    // padding: 0 292px;
-
     > div {
-        @include flex(row,space-between,center);
+        @include flex(column,space-between,center);
     }
 
     img{
         width: 162px;
         height: 286px;
         margin: 60px 0;
+        order: 1;
     }
 
     .texts-and-links{
@@ -77,16 +81,94 @@ footer{
     }
 }
 
-main{
-    > div {
-        @include flex(row,space-between,center);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+// header{
+//     /* width: 100%; */
+//     // display: flex;
+
+//     @include flex(row,center,unset);
+
+//     // justify-content: space-between;
+//     // padding: 0 292px;
+//     gap: 5.06rem;
+//     > div {
+//         @include flex(row,space-between,center);
+//     }
+// }
+
+// nav{
+//     height: inherit;
+//     ul{
+//         display: flex;
+//         list-style-type: none;
+//         gap: 1.75rem; //28px
+//         padding: 0;
+//         align-items: center;
+//         height: 100%;
+//     }
+//     li{
+//         height: max-content;
+//     }
+//     a{
+//         text-decoration: none;
+//         color: black;
+//         font-weight: bold;
+//         font-size: $font3;
+//     }
+// }
+
+// footer{
+//     // display: flex;
+//     // justify-content: space-between;
+//     // align-items: center;
+//     background-color: $secondary-color3;
+//     // padding: 0 292px;
+
+//     > div {
+//         @include flex(row,space-between,center);
+//     }
+
+//     img{
+//         width: 162px;
+//         height: 286px;
+//         margin: 60px 0;
+//     }
+
+//     .texts-and-links{
+//         display: flex;
+//         align-items: start;
+//         gap: 100px;
+//     }
+
+//     h5{
+//         margin-bottom: 24px;
+//     }
+//     ul{
+//         list-style-type: none;
+//     }
+// }
+
+// main{
+//     > div {
+//         @include flex(row,space-between,center);
+//     }
+// }
 
 .booking-form{
     display: grid;
-    max-width: 200px;
-    gap: 20px
+    // max-width: 200px;
+    width: 100%;
+    gap: 20px;
+    padding: 1rem 0
 }
 
 
