@@ -1,6 +1,7 @@
 @use './helpers/colors' as *;
 @use './helpers/fonts' as *;
 @use './helpers/mixins' as *;
+@use './helpers/variables' as *;
 
 
 *{
@@ -11,48 +12,130 @@
 
 // default styles  =>  small screens
 
-header{
-    > div {
-            @include flex(row,center,center);
-            img{
-                width: 147px;
-                height: 70px;
-            }
-            .hamburger-icon{
-                padding-left: 0.75rem;
-                position: absolute;
-                left: 0;
-            }
-            nav{
-                position: absolute;
-                left: 0;//0.75rem
-                top: 0;
-                background-color: beige;
-                height: 100vh;
-                width: 75vw;
-                ul{
-                    list-style-type: none;
-                    gap: 1.75rem;
-                    padding: 0;
-                    li{
-                        font-size: $nav;
-                        padding: 21px 16px;
-                        border-bottom: solid 1px #D9D9D9;
-                        font-weight: bold;
-                    }
-                }
-            }
-            .beside-nav{
-                width: 25vw;
-                position: absolute;
-                right: 0;
-                height: 100vh;
-                top: 0;
-                background-color: #252525B8;
-            }
-        }
+.btn{
+    background-color: $primary-color2;
+    border-radius: 20px;
+    color: black;
+    padding: 0.5rem 1rem;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
+header{
+    .container {
+        @include flex(row,center,center);
+        img{
+            width: 147px;
+            height: 70px;
+        }
+        .hamburger-icon{
+            padding-left: 0.75rem;
+            position: absolute;
+            left: 0;
+        }
+        nav{
+            position: absolute;
+            left: 0;//0.75rem
+            top: 0;
+            background-color: beige;
+            height: 100vh;
+            width: 75vw;
+            display: none;
+            ul{
+                list-style-type: none;
+                gap: 1.75rem;
+                padding: 0;
+                li{
+                    font-size: $nav;
+                    padding: 21px 16px;
+                    border-bottom: solid 1px #D9D9D9;
+                    font-weight: bold;
+                }
+            }
+        }
+        .beside-nav{
+            width: 25vw;
+            position: absolute;
+            right: 0;
+            height: 100vh;
+            top: 0;
+            background-color: #252525B8;
+            display: none
+        }
+        nav ,.beside-nav {
+            z-index: 1;
+        }
+    }
+}
+
+.hero{
+    @include flex(row,space-between,center);
+    background-color: $primary-color1;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    h1{
+        font-size: $title;
+        color: $primary-color2;
+        line-height: 1;
+    }
+    h2{
+        font-size: $sub-title;
+        line-height: 1.5;
+    }
+    p{
+        font-size: $des;
+        padding: 1rem 0 2rem 0;
+        width: 60%;
+    }
+    img{
+        position: absolute;
+        right: $container-padding-x;
+    }
+}
+
+.highlights{
+    .title-and-btn{
+        @include flex(column,unset,unset);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
+    }
+    .section-title{
+        font-size: $section-title;
+        font-weight: bold;
+    }
+    .food-grid{
+        display: grid;
+    }
+    .food-card{
+        @include flex(row,space-between,center);
+        gap: 0.9375rem;
+        border-top: solid 2px #EDEFEE;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        .texts{
+            @include flex(column,unset,unset);
+            gap: 0.5rem;
+            h1{
+                font-size: $card-title;
+                font-weight: bold;
+            }
+            .des{
+                font-size: $card-des;
+                color: $primary-color1;
+                font-weight: lighter;
+            }
+            .price{
+                color: $secondary-color1;
+            }
+        }
+        img{
+            width: 83px;
+            height: 83px;
+        }
+    }
+}
 
 footer{
     background-color: $secondary-color3;
@@ -178,7 +261,7 @@ footer{
 }
 
 .container{
-    @include make-container();
+    @include make-container($container-padding-x);
     max-width: 858px;
 }
 
