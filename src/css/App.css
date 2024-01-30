@@ -81,6 +81,7 @@ header .container nav, header .container .beside-nav {
   font-size: 64px;
   color: #F4CE14;
   line-height: 1;
+  font-family: "Markazi Text", serif;
 }
 .hero h2 {
   font-size: 40px;
@@ -157,6 +158,31 @@ header .container nav, header .container .beside-nav {
 .testimonials .raters .rater {
   padding: 2rem;
   background-color: white;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+  padding-top: 2.44rem;
+  padding-bottom: 2.44rem;
+  background-color: white;
+}
+.about h1 {
+  font-size: 64px;
+  color: #F4CE14;
+  line-height: 1;
+  font-family: "Markazi Text", serif;
+}
+.about h2 {
+  font-size: 40px;
+  line-height: 1.5;
+  color: black;
+}
+.about p {
+  font-size: 18px;
+  padding: 1rem 0 2rem 0;
 }
 
 footer {

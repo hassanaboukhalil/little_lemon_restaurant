@@ -3,6 +3,7 @@ import Main from '../layout/Main'
 import Hero from '../others/Hero'
 import Highlights from '../others/Highlights'
 import Testimonials from '../others/Testimonials'
+import About from '../others/About'
 
 function HomePage() {
   return (
@@ -11,6 +12,7 @@ function HomePage() {
           <Hero />
           <Highlights />
           <Testimonials />
+          <About />
         </Main>
     </>
   )

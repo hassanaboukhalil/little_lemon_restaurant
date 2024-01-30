@@ -84,6 +84,7 @@ header{
         font-size: $title;
         color: $primary-color2;
         line-height: 1;
+        font-family: "Markazi Text" , serif;
     }
     h2{
         font-size: $sub-title;
@@ -156,6 +157,27 @@ header{
     }
 }
 
+.about{
+    @include flex(column,unset,unset);
+    padding-top: 2.44rem;
+    padding-bottom: 2.44rem;
+    background-color: white;
+    h1{
+        font-size: $title;
+        color: $primary-color2;
+        line-height: 1;
+        font-family: "Markazi Text" , serif;
+    }
+    h2{
+        font-size: $sub-title;
+        line-height: 1.5;
+        color: black;
+    }
+    p{
+        font-size: $des;
+        padding: 1rem 0 2rem 0;
+    }
+}
 
 footer{
     background-color: $secondary-color3;
