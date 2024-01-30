@@ -34,10 +34,6 @@ function Highlights() {
             <button className='btn'>Online Menu</button>
         </div>
         <div className='food-grid'>
-            {/* <FoodCard card={cards[0]}/>
-            <FoodCard card={cards[1]}/>
-            <FoodCard card={cards[2]}/> */}
-
             {cards.map(card => {
                 return (
                     <FoodCard card={card}/>

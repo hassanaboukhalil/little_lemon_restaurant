@@ -181,25 +181,28 @@ header{
 
 footer{
     background-color: $secondary-color3;
-    > div {
+    .container {
         @include flex(column,space-between,center);
+        padding-top: 2.44rem;
+        padding-bottom: 2.44rem;
+        gap: 4rem;
     }
 
     img{
         width: 162px;
         height: 286px;
-        margin: 60px 0;
         order: 1;
     }
 
     .texts-and-links{
-        display: flex;
+        display: grid;
         align-items: start;
-        gap: 100px;
+        gap: 30px;
     }
 
     h5{
-        margin-bottom: 24px;
+        font-weight: bold;
+        margin-bottom: 7px;
     }
     ul{
         list-style-type: none;
