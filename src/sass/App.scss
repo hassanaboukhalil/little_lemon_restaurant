@@ -12,6 +12,13 @@
 
 // default styles  =>  small screens
 
+.section1{
+    background-color: $primary-color1;
+}
+.section3{
+    background-color: $secondary-color3;
+}
+
 .btn{
     background-color: $primary-color2;
     border-radius: 20px;
@@ -70,7 +77,6 @@ header{
 
 .hero{
     @include flex(row,space-between,center);
-    background-color: $primary-color1;
     color: white;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -136,6 +142,20 @@ header{
         }
     }
 }
+
+.testimonials{
+    padding-top: 2.44rem;
+    padding-bottom: 2.44rem;
+    .raters{
+        padding-top: 2.44rem;
+        gap: 2rem;
+        .rater{
+            padding: 2rem;
+            background-color: white;
+        }
+    }
+}
+
 
 footer{
     background-color: $secondary-color3;
