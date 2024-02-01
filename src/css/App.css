@@ -285,6 +285,37 @@ footer ul {
     height: 185.26px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border: solid 1.5px;
+  }
+  :root .testimonials .raters {
+    padding-right: 0;
+    padding-left: 0;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    row-gap: 2rem;
+  }
+  :root .testimonials .raters .rater {
+    padding: 1rem;
+  }
+  :root .about {
+    align-items: center;
+  }
+  :root .about p {
+    font-weight: bold;
+  }
+  :root .about img {
+    width: 360px;
+    height: 360px;
+  }
+  :root footer .container {
+    flex-direction: row;
+    padding: var(--container-padding-x);
+  }
+  :root footer .container img {
+    order: 0;
+  }
+  :root footer .container .texts-and-links {
+    grid-template-columns: auto auto;
   }
 }
 .booking-form {

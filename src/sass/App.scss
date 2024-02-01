@@ -254,6 +254,44 @@ footer{
                     height: 185.26px;
                     border-top-left-radius: 20px;
                     border-top-right-radius: 20px;
+                    border: solid 1.5px;
+                }
+            }
+        }
+
+        .testimonials{
+            .raters{
+                padding-right: 0;
+                padding-left: 0;
+                grid-template-columns: auto auto;
+                justify-items: center;
+                row-gap: 2rem;
+                .rater{
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .about{
+            align-items: center;
+            p{
+                font-weight: bold;
+            }
+            img{
+                width: 360px;
+                height: 360px;
+            }
+        }
+
+        footer{
+            .container{
+                flex-direction: row;
+                padding: var(--container-padding-x);
+                img{
+                    order: 0;
+                }
+                .texts-and-links{
+                    grid-template-columns: auto auto;
                 }
             }
         }
