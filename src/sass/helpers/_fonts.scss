@@ -1,11 +1,28 @@
-$font3: 18px;
+// $nav: 20px;
+// $title: 64px;
+// $sub-title: 40px;
+// $des: 18px;
+// $btn: 16px;
+// $card-title: 18px;
+// $card-des: 16px;
+// $section-title: 30px;
+// $footer: 20px;
 
-$nav: 20px;
-$title: 64px;
-$sub-title: 40px;
-$des: 18px;
-$btn: 16px;
-$card-title: 18px;
-$card-des: 16px;
-$section-title: 30px;
-$footer: 20px;
+:root {
+    --nav: 20px;
+    --title: 64px;
+
+    --sub-title: 40px;
+    --des: 18px;
+    --btn: 16px;
+    --card-title: 18px;
+    --card-des: 16px;
+    --section-title: 30px;
+    --footer: 20px;
+}
+
+@media (width > 600px){
+    :root {
+        --section-title: 50px;
+    }
+}

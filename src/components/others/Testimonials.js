@@ -6,7 +6,7 @@ function Testimonials() {
   return (
     <section className='section3'>
       <div className='testimonials container'>
-        <Center fontSize='30px' as='b'>Testimonials</Center>
+        <Center className='title' as='b'>Testimonials</Center>
         <Grid className='raters' templateColumns='auto' paddingX='2rem' spacing='2.94rem' justifyItems='center'>
             <Rater />
             <Rater />
