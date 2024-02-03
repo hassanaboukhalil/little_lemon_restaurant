@@ -1,0 +1,33 @@
+@use '../helpers/colors' as *;
+@use '../helpers/fonts' as *;
+@use '../helpers/mixins' as *;
+@use '../helpers/variables' as *;
+
+.confirmed-booking{
+    background-color: $primary-color1;
+    .container{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        gap: 3rem;
+        text-align: center;
+        .title{
+            color: $primary-color2;
+            font-size: var(--title);
+        }
+        .subtitle{
+            font-size: var(--sub-title);
+            color: white;
+        }
+    }
+}
+
+@media (width > 600px){
+    .confirmed-booking .container {
+        padding-top: 13rem;
+        padding-bottom: 13rem;
+        gap: 8rem;
+    }
+}

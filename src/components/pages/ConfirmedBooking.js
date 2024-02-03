@@ -1,11 +1,17 @@
 import Main from "../layout/Main";
+import '../../css/confirmed_booking.css';
+
 
 export default function ConfirmedBooking() {
     return (
         <Main>
-            <p className="title confirmed-title">Booking Confirmed!!!</p>
-            <p className="subtitle confirmed-subtitle">Please provide your name and contact number at the reception upon arrival</p>
-            <p className="subtitle confirmed-subtitle">We are excited to serve you</p>
+            <section className="confirmed-booking">
+                <div className="container">
+                    <p className="title">Booking Confirmed!!!</p>
+                    <p className="subtitle">Please provide your name and contact number at the reception upon arrival</p>
+                    <p className="subtitle">We are excited to serve you</p>
+                </div>
+            </section>
         </Main>
     )
 }
