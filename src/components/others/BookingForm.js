@@ -36,10 +36,10 @@ function BookingForm({times_reducer_obj , submitForm }) {
     }
 
     return (
-        <section>
-            <div className='container'>
+        <section className='section1'>
+            <div className='container form-div'>
                 <form className='booking-form' onSubmit={handle_submit}>
-                    <Heading w="100%">Book a table :</Heading>
+                    <Heading className='title' w="100%">Book a table :</Heading>
                     <FormControl role='group' isInvalid={formik.errors.date}>
                         <FormLabel>Choose date</FormLabel>
                         <Input type='date' {...formik.getFieldProps("date")} onChange={date_changed} aria-label='Enter the booking date' required/>

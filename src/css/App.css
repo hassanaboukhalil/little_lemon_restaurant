@@ -8,6 +8,9 @@
   --card-des: 16px;
   --section-title: 30px;
   --footer: 20px;
+  --form-title: 30px;
+  --form-label: 18px;
+  --form-input: 16px;
 }
 
 @media (width > 600px) {

@@ -8,6 +8,9 @@
   --card-des: 16px;
   --section-title: 30px;
   --footer: 20px;
+  --form-title: 30px;
+  --form-label: 18px;
+  --form-input: 16px;
 }
 
 @media (width > 600px) {
@@ -37,9 +40,46 @@
     --container-padding-x: 16rem;
   }
 }
-.booking-form {
+.section1 {
+  background-color: #495E57;
+}
+
+.form-div {
+  color: white;
+}
+.form-div select, .form-div input {
+  color: black;
+  background-color: white;
+  font-size: var(--form-input);
+}
+.form-div button {
+  background-color: #F4CE14;
+  color: black;
+}
+.form-div .booking-form {
   display: grid;
-  width: 100%;
-  gap: 20px;
-  padding: 1rem 0;
+  gap: 1.2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.form-div .booking-form .title {
+  font-size: var(--form-title);
+}
+.form-div .booking-form label {
+  font-size: var(--form-label);
+}
+
+@media (width > 600px) {
+  .form-div .booking-form {
+    gap: 3rem;
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+  }
+}
+@media (width > 1030px) {
+  .form-div .booking-form {
+    gap: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }/*# sourceMappingURL=booking.css.map */
