@@ -1,0 +1,242 @@
+@use '../helpers/colors' as *;
+@use '../helpers/fonts' as *;
+@use '../helpers/mixins' as *;
+@use '../helpers/variables' as *;
+
+
+// default styles  =>  small screens
+
+.section1{
+    background-color: $primary-color1;
+}
+.section3{
+    background-color: $secondary-color3;
+}
+
+.hero{
+    @include flex(row,space-between,center);
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    h1{
+        font-size: var(--title);
+        color: $primary-color2;
+        line-height: 1;
+        font-family: "Markazi Text" , serif;
+    }
+    h2{
+        font-size: var(--sub-title);
+        line-height: 1.5;
+    }
+    p{
+        font-size: var(--des);
+        padding: 1rem 0 2rem 0;
+        width: 60%;
+    }
+    img{
+        position: absolute;
+        right: var(--container-padding-x);
+    }
+}
+
+.highlights{
+    .title-and-btn{
+        @include flex(column,unset,unset);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
+    }
+    .section-title{
+        font-size: var(--section-title);
+        font-weight: bold;
+    }
+    .food-grid{
+        display: grid;
+    }
+    .food-card{
+        @include flex(row,space-between,center);
+        gap: 0.9375rem;
+        border-top: solid 2px #EDEFEE;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        .texts{
+            @include flex(column,unset,unset);
+            gap: 0.5rem;
+            h1{
+                font-size: var(--card-title);
+                font-weight: bold;
+            }
+            .des{
+                font-size: var(--card-des);
+                color: $primary-color1;
+                font-weight: lighter;
+            }
+            .price{
+                color: $secondary-color1;
+            }
+        }
+        img{
+            width: 83px;
+            height: 83px;
+        }
+    }
+}
+
+.testimonials{
+    padding-top: 2.44rem;
+    padding-bottom: 2.44rem;
+    .title{
+        font-size: var(--section-title);
+    }
+    .raters{
+        padding-top: 2.44rem;
+        gap: 2rem;
+        .rater{
+            padding: 2rem;
+            background-color: white;
+        }
+    }
+}
+
+.about{
+    @include flex(column,unset,unset);
+    padding-top: 2.44rem;
+    padding-bottom: 2.44rem;
+    background-color: white;
+    h1{
+        font-size: var(--title);
+        color: $primary-color2;
+        line-height: 1;
+        font-family: "Markazi Text" , serif;
+    }
+    h2{
+        font-size: var(--sub-title);
+        line-height: 1.5;
+        color: black;
+    }
+    p{
+        font-size: var(--des);
+        padding: 1rem 0 2rem 0;
+    }
+}
+
+
+
+@media (width > 600px){
+    .highlights{
+        padding-top: calc(var(--container-padding-x)/2);
+        padding-bottom: calc(var(--container-padding-x)/2);
+        .title-and-btn{
+            padding-top: unset;
+        }
+        .food-grid{
+            grid-template-columns: auto auto;
+            justify-items: center;
+            gap: 2rem;
+        }
+        .food-card{
+            flex-direction: column;
+            background-color: #EDEFEE;
+            align-items: unset;
+            gap: unset;
+            border-top: unset;
+            padding-top: unset;
+            padding-bottom: unset;
+            width: 264.67px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            .texts{
+                order: 2;
+                padding: 1.2rem 1rem;
+                .des:not(.price){
+                    font-weight: normal;
+                    color: #495E57;
+                }
+            }
+            img{
+                order: 1;
+                width: 264.67px;
+                height: 185.26px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                border: solid 1.5px;
+            }
+        }
+    }
+
+    .testimonials{
+        .raters{
+            padding-right: 0;
+            padding-left: 0;
+            grid-template-columns: auto auto;
+            justify-items: center;
+            row-gap: 2rem;
+            .rater{
+                padding: 1rem;
+            }
+        }
+    }
+
+    .about{
+        align-items: center;
+        p{
+            font-weight: bold;
+        }
+        img{
+            width: 360px;
+            height: 360px;
+        }
+    }
+}
+
+@media (width > 992px){
+    .hero{
+        align-items: unset;
+        h2{
+            line-height: 1
+        }
+        p{
+            padding: 1rem 0 0.5rem 0;
+            width: 38%;
+        }
+        img{
+            width: 19.75rem;
+        }
+    }
+    .highlights{
+        .title-and-btn{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            button{
+                height: -webkit-fill-available;
+            }
+        }
+        .food-grid{
+            grid-template-columns: auto auto auto;
+            justify-content: space-between;
+            gap: unset;
+        }
+    }
+    .testimonials{
+        .raters{
+            grid-template-columns: auto auto auto auto;
+            justify-content: space-between;
+            gap: 1rem;
+            .rater{
+                padding: 0.5rem;
+                p{
+                    width: unset;
+                }
+            }
+        }
+    }
+    .about{
+        flex-direction: row;
+        gap: 2rem;
+        img{
+            width: 447px;
+            height: 445px;
+        }
+    }
+}

@@ -12,12 +12,6 @@
 
 // default styles  =>  small screens
 
-.section1{
-    background-color: $primary-color1;
-}
-.section3{
-    background-color: $secondary-color3;
-}
 
 .btn{
     background-color: $primary-color2;
@@ -76,113 +70,6 @@ header{
     }
 }
 
-.hero{
-    @include flex(row,space-between,center);
-    color: white;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    h1{
-        font-size: var(--title);
-        color: $primary-color2;
-        line-height: 1;
-        font-family: "Markazi Text" , serif;
-    }
-    h2{
-        font-size: var(--sub-title);
-        line-height: 1.5;
-    }
-    p{
-        font-size: var(--des);
-        padding: 1rem 0 2rem 0;
-        width: 60%;
-    }
-    img{
-        position: absolute;
-        right: var(--container-padding-x);
-    }
-}
-
-.highlights{
-    .title-and-btn{
-        @include flex(column,unset,unset);
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        gap: 1rem;
-    }
-    .section-title{
-        font-size: var(--section-title);
-        font-weight: bold;
-    }
-    .food-grid{
-        display: grid;
-    }
-    .food-card{
-        @include flex(row,space-between,center);
-        gap: 0.9375rem;
-        border-top: solid 2px #EDEFEE;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        .texts{
-            @include flex(column,unset,unset);
-            gap: 0.5rem;
-            h1{
-                font-size: var(--card-title);
-                font-weight: bold;
-            }
-            .des{
-                font-size: var(--card-des);
-                color: $primary-color1;
-                font-weight: lighter;
-            }
-            .price{
-                color: $secondary-color1;
-            }
-        }
-        img{
-            width: 83px;
-            height: 83px;
-        }
-    }
-}
-
-.testimonials{
-    padding-top: 2.44rem;
-    padding-bottom: 2.44rem;
-    .title{
-        font-size: var(--section-title);
-    }
-    .raters{
-        padding-top: 2.44rem;
-        gap: 2rem;
-        .rater{
-            padding: 2rem;
-            background-color: white;
-        }
-    }
-}
-
-.about{
-    @include flex(column,unset,unset);
-    padding-top: 2.44rem;
-    padding-bottom: 2.44rem;
-    background-color: white;
-    h1{
-        font-size: var(--title);
-        color: $primary-color2;
-        line-height: 1;
-        font-family: "Markazi Text" , serif;
-    }
-    h2{
-        font-size: var(--sub-title);
-        line-height: 1.5;
-        color: black;
-    }
-    p{
-        font-size: var(--des);
-        padding: 1rem 0 2rem 0;
-    }
-}
-
 footer{
     background-color: $secondary-color3;
     .container {
@@ -215,303 +102,85 @@ footer{
     }
 }
 
-
-
-@media (width > 600px){
-    :root {
-        .highlights{
-            padding-top: calc(var(--container-padding-x)/2);
-            padding-bottom: calc(var(--container-padding-x)/2);
-            .title-and-btn{
-                padding-top: unset;
-            }
-            .food-grid{
-                grid-template-columns: auto auto;
-                justify-items: center;
-                gap: 2rem;
-            }
-            .food-card{
-                flex-direction: column;
-                background-color: #EDEFEE;
-                align-items: unset;
-                gap: unset;
-                border-top: unset;
-                padding-top: unset;
-                padding-bottom: unset;
-                width: 264.67px;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                .texts{
-                    order: 2;
-                    padding: 1.2rem 1rem;
-                    .des:not(.price){
-                        font-weight: normal;
-                        color: #495E57;
-                    }
-                }
-                img{
-                    order: 1;
-                    width: 264.67px;
-                    height: 185.26px;
-                    border-top-left-radius: 20px;
-                    border-top-right-radius: 20px;
-                    border: solid 1.5px;
-                }
-            }
-        }
-
-        .testimonials{
-            .raters{
-                padding-right: 0;
-                padding-left: 0;
-                grid-template-columns: auto auto;
-                justify-items: center;
-                row-gap: 2rem;
-                .rater{
-                    padding: 1rem;
-                }
-            }
-        }
-
-        .about{
-            align-items: center;
-            p{
-                font-weight: bold;
-            }
-            img{
-                width: 360px;
-                height: 360px;
-            }
-        }
-
-        footer{
-            .container{
-                flex-direction: row;
-                padding: var(--container-padding-x);
-                img{
-                    order: 0;
-                }
-                .texts-and-links{
-                    grid-template-columns: auto auto;
-                }
-            }
-        }
-    }
-}
-
-@media (width > 992px){
-    :root {
-        header{
-            .container{
-                justify-content: space-between;
-                align-items: center;
-                color: black;
-                img{
-                    width: 202px;
-                }
-                nav{
-                    position: unset;
-                    display: block;
-                    width: unset;
-                    height: unset;
-
-                    ul{
-                        background-color: white;
-                        // gap: unset;
-                        @include flex(row,unset,center);
-
-                        gap: 1.75rem; //28px
-                        padding: 0;
-                        align-items: center;
-                        height: 100%;
-
-                        li{
-                            border: none;
-                            padding: 0;
-
-                        }
-                    }
-                }
-            }
-            
-        }
-        .hero{
-            align-items: unset;
-            h2{
-                line-height: 1
-            }
-            p{
-                padding: 1rem 0 0.5rem 0;
-                width: 38%;
-            }
-            img{
-                width: 19.75rem;
-            }
-        }
-        .highlights{
-            .title-and-btn{
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                button{
-                    height: -webkit-fill-available;
-                }
-            }
-            .food-grid{
-                grid-template-columns: auto auto auto;
-                justify-content: space-between;
-                gap: unset;
-            }
-        }
-        .testimonials{
-            .raters{
-                grid-template-columns: auto auto auto auto;
-                justify-content: space-between;
-                gap: 1rem;
-                .rater{
-                    padding: 0.5rem;
-                    p{
-                        width: unset;
-                    }
-                }
-            }
-        }
-        .about{
-            flex-direction: row;
-            gap: 2rem;
-            img{
-                width: 447px;
-                height: 445px;
-            }
-        }
-        footer{
-            .container{
-                padding-top: 2.44rem;
-                padding-bottom: 2.44rem;
-                gap: unset;
-                .texts-and-links{
-                    grid-template-columns: auto auto auto;
-                    gap: 4rem;
-                    align-items: unset;
-                    h5{
-                        margin-bottom: 1rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-// header{
-//     /* width: 100%; */
-//     // display: flex;
-
-//     @include flex(row,center,unset);
-
-//     // justify-content: space-between;
-//     // padding: 0 292px;
-//     gap: 5.06rem;
-//     > div {
-//         @include flex(row,space-between,center);
-//     }
-// }
-
-// nav{
-//     height: inherit;
-//     ul{
-//         display: flex;
-//         list-style-type: none;
-//         gap: 1.75rem; //28px
-//         padding: 0;
-//         align-items: center;
-//         height: 100%;
-//     }
-//     li{
-//         height: max-content;
-//     }
-//     a{
-//         text-decoration: none;
-//         color: black;
-//         font-weight: bold;
-//         font-size: $font3;
-//     }
-// }
-
-// footer{
-//     // display: flex;
-//     // justify-content: space-between;
-//     // align-items: center;
-//     background-color: $secondary-color3;
-//     // padding: 0 292px;
-
-//     > div {
-//         @include flex(row,space-between,center);
-//     }
-
-//     img{
-//         width: 162px;
-//         height: 286px;
-//         margin: 60px 0;
-//     }
-
-//     .texts-and-links{
-//         display: flex;
-//         align-items: start;
-//         gap: 100px;
-//     }
-
-//     h5{
-//         margin-bottom: 24px;
-//     }
-//     ul{
-//         list-style-type: none;
-//     }
-// }
-
-// main{
-//     > div {
-//         @include flex(row,space-between,center);
-//     }
-// }
-
-.booking-form{
-    display: grid;
-    // max-width: 200px;
-    width: 100%;
-    gap: 20px;
-    padding: 1rem 0
-}
-
-
-.grid{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-
 .container{
     @include make-container(var(--container-padding-x));
-    // max-width: 858px;
 }
+
 
 /* Media Queries */
+
 @media (width > 600px){
+    footer{
+        .container{
+            flex-direction: row;
+            padding: var(--container-padding-x);
+            img{
+                order: 0;
+            }
+            .texts-and-links{
+                grid-template-columns: auto auto;
+            }
+        }
+    }
     .container{
         @include make-container(var(--container-padding-x));
-        // max-width: 500px;
     }
 }
-
 
 @media (width > 900px) {
     .container{
         @include make-container(var(--container-padding-x));
+    }
+}
 
-        // max-width: 858px;
+@media (width > 992px){
+    header{
+        .container{
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+            img{
+                width: 202px;
+            }
+            nav{
+                position: unset;
+                display: block;
+                width: unset;
+                height: unset;
+
+                ul{
+                    background-color: white;
+                    // gap: unset;
+                    @include flex(row,unset,center);
+
+                    gap: 1.75rem; //28px
+                    padding: 0;
+                    align-items: center;
+                    height: 100%;
+
+                    li{
+                        border: none;
+                        padding: 0;
+
+                    }
+                }
+            }
+        }
+        
+    }
+    footer{
+        .container{
+            padding-top: 2.44rem;
+            padding-bottom: 2.44rem;
+            gap: unset;
+            .texts-and-links{
+                grid-template-columns: auto auto auto;
+                gap: 4rem;
+                align-items: unset;
+                h5{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
 }

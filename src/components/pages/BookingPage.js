@@ -3,6 +3,8 @@ import BookingForm from '../others/BookingForm'
 import Main from '../layout/Main'
 import { fetchAPI , submitAPI} from '../api'
 import { useNavigate } from 'react-router-dom'
+import '../../css/booking.css';
+
 
 const initializeTimes = () => {
 

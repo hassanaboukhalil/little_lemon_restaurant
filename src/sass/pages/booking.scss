@@ -1,0 +1,12 @@
+@use '../helpers/colors' as *;
+@use '../helpers/fonts' as *;
+@use '../helpers/mixins' as *;
+@use '../helpers/variables' as *;
+
+.booking-form{
+    display: grid;
+    // max-width: 200px;
+    width: 100%;
+    gap: 20px;
+    padding: 1rem 0
+}

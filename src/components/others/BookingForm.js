@@ -36,37 +36,41 @@ function BookingForm({times_reducer_obj , submitForm }) {
     }
 
     return (
-        <form className='booking-form' onSubmit={handle_submit}>
-            <Heading w="100%">Book a table :</Heading>
-            <FormControl role='group' isInvalid={formik.errors.date}>
-                <FormLabel>Choose date</FormLabel>
-                <Input type='date' {...formik.getFieldProps("date")} onChange={date_changed} aria-label='Enter the booking date' required/>
-                <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
-            </FormControl>
-            <FormControl role='group' isInvalid={formik.errors.time}>
-                <FormLabel>Choose time</FormLabel>
-                <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
-                    <AvailableTimes times_reducer_obj={times_reducer_obj}/>
-                </Select>
-                <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
-            </FormControl>
-            <FormControl role='group' isInvalid={formik.errors.guests_nb}>
-                <FormLabel>Number of guests</FormLabel>
-                <Input title='guests-nb' type="number" min="2" max="10" {...formik.getFieldProps("guests_nb")} aria-label='Enter the number of guests' required/>
-                <FormErrorMessage>{formik.errors.guests_nb}</FormErrorMessage>
-            </FormControl>
-            <FormControl role='group'>
-                <FormLabel>Occasion</FormLabel>
-                <Select {...formik.getFieldProps("occasion")}>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                    <option>not specified</option>
-                </Select>
-            </FormControl>
-            <Button type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.date || formik.errors.guests_nb) ? true : false} isLoading={false} aria-label="On Click">
-                Submit
-            </Button>
-        </form>
+        <section>
+            <div className='container'>
+                <form className='booking-form' onSubmit={handle_submit}>
+                    <Heading w="100%">Book a table :</Heading>
+                    <FormControl role='group' isInvalid={formik.errors.date}>
+                        <FormLabel>Choose date</FormLabel>
+                        <Input type='date' {...formik.getFieldProps("date")} onChange={date_changed} aria-label='Enter the booking date' required/>
+                        <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
+                    </FormControl>
+                    <FormControl role='group' isInvalid={formik.errors.time}>
+                        <FormLabel>Choose time</FormLabel>
+                        <Select {...formik.getFieldProps("time")} aria-label='Select the booking time'>
+                            <AvailableTimes times_reducer_obj={times_reducer_obj}/>
+                        </Select>
+                        <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
+                    </FormControl>
+                    <FormControl role='group' isInvalid={formik.errors.guests_nb}>
+                        <FormLabel>Number of guests</FormLabel>
+                        <Input title='guests-nb' type="number" min="2" max="10" {...formik.getFieldProps("guests_nb")} aria-label='Enter the number of guests' required/>
+                        <FormErrorMessage>{formik.errors.guests_nb}</FormErrorMessage>
+                    </FormControl>
+                    <FormControl role='group'>
+                        <FormLabel>Occasion</FormLabel>
+                        <Select {...formik.getFieldProps("occasion")}>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>not specified</option>
+                        </Select>
+                    </FormControl>
+                    <Button type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.date || formik.errors.guests_nb) ? true : false} isLoading={false} aria-label="On Click">
+                        Submit
+                    </Button>
+                </form>
+            </div>
+        </section>
     )
 }
 
