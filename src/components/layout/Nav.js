@@ -27,11 +27,8 @@ export default function Nav() {
                     <li>
                         <Link to='/' className='nav-item' aria-label="On Click">Home</Link>
                     </li>
-                    {/* <li>
-                        <a href='' role='button' >About</a>
-                    </li> */}
                     <li>
-                        <Link to='/booking-page' className='nav-item' aria-label="On Click">About</Link>
+                        <a href='#About' role='button' aria-label="On Click">About</a>
                     </li>
                     <li>
                         <a href='#Menu' role='button' aria-label="On Click">Menu</a>
@@ -58,11 +55,8 @@ export default function Nav() {
                     <li>
                         <Link to='/' className='nav-item' aria-label="On Click">Home</Link>
                     </li>
-                    {/* <li>
-                        <a href='' role='button' >About</a>
-                    </li> */}
                     <li>
-                        <Link to='/booking-page' className='nav-item' aria-label="On Click">About</Link>
+                        <a href='#About' role='button' aria-label="On Click">About</a>
                     </li>
                     <li>
                         <a href='#Menu' role='button' aria-label="On Click">Menu</a>
