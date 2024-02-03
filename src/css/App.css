@@ -15,13 +15,26 @@
     --section-title: 50px;
   }
 }
+@media (width > 992px) {
+  :root {
+    --title: 67px;
+    --section-title: 67px;
+    --btn: 18px;
+    --nav: 18px;
+  }
+}
 :root {
   --container-padding-x: 1rem;
 }
 
-@media (width > 600px) {
+@media (width > 724px) {
   :root {
     --container-padding-x: 5.12rem;
+  }
+}
+@media (width > 1290px) {
+  :root {
+    --container-padding-x: 16rem;
   }
 }
 * {
@@ -44,6 +57,7 @@
   padding: 0.5rem 1rem;
   width: -moz-fit-content;
   width: fit-content;
+  font-weight: 500;
 }
 
 header .container {
@@ -316,6 +330,95 @@ footer ul {
   }
   :root footer .container .texts-and-links {
     grid-template-columns: auto auto;
+  }
+}
+@media (width > 992px) {
+  :root header .container {
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+  }
+  :root header .container img {
+    width: 202px;
+  }
+  :root header .container nav {
+    position: unset;
+    display: block;
+    width: unset;
+    height: unset;
+  }
+  :root header .container nav ul {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 0;
+    align-items: center;
+    height: 100%;
+  }
+  :root header .container nav ul li {
+    border: none;
+    padding: 0;
+  }
+  :root .hero {
+    align-items: unset;
+  }
+  :root .hero h2 {
+    line-height: 1;
+  }
+  :root .hero p {
+    padding: 1rem 0 0.5rem 0;
+    width: 38%;
+  }
+  :root .hero img {
+    width: 19.75rem;
+  }
+  :root .highlights .title-and-btn {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  :root .highlights .title-and-btn button {
+    height: -webkit-fill-available;
+  }
+  :root .highlights .food-grid {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: unset;
+  }
+  :root .testimonials .raters {
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  :root .testimonials .raters .rater {
+    padding: 0.5rem;
+  }
+  :root .testimonials .raters .rater p {
+    width: unset;
+  }
+  :root .about {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  :root .about img {
+    width: 447px;
+    height: 445px;
+  }
+  :root footer .container {
+    padding-top: 2.44rem;
+    padding-bottom: 2.44rem;
+    gap: unset;
+  }
+  :root footer .container .texts-and-links {
+    grid-template-columns: auto auto auto;
+    gap: 4rem;
+    align-items: unset;
+  }
+  :root footer .container .texts-and-links h5 {
+    margin-bottom: 1rem;
   }
 }
 .booking-form {

@@ -26,6 +26,7 @@
     padding: 0.5rem 1rem;
     width: -moz-fit-content;
     width: fit-content;
+    font-weight: 500;
 }
 
 header{
@@ -292,6 +293,109 @@ footer{
                 }
                 .texts-and-links{
                     grid-template-columns: auto auto;
+                }
+            }
+        }
+    }
+}
+
+@media (width > 992px){
+    :root {
+        header{
+            .container{
+                justify-content: space-between;
+                align-items: center;
+                color: black;
+                img{
+                    width: 202px;
+                }
+                nav{
+                    position: unset;
+                    display: block;
+                    width: unset;
+                    height: unset;
+
+                    ul{
+                        background-color: white;
+                        // gap: unset;
+                        @include flex(row,unset,center);
+
+                        gap: 1.75rem; //28px
+                        padding: 0;
+                        align-items: center;
+                        height: 100%;
+
+                        li{
+                            border: none;
+                            padding: 0;
+
+                        }
+                    }
+                }
+            }
+            
+        }
+        .hero{
+            align-items: unset;
+            h2{
+                line-height: 1
+            }
+            p{
+                padding: 1rem 0 0.5rem 0;
+                width: 38%;
+            }
+            img{
+                width: 19.75rem;
+            }
+        }
+        .highlights{
+            .title-and-btn{
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                button{
+                    height: -webkit-fill-available;
+                }
+            }
+            .food-grid{
+                grid-template-columns: auto auto auto;
+                justify-content: space-between;
+                gap: unset;
+            }
+        }
+        .testimonials{
+            .raters{
+                grid-template-columns: auto auto auto auto;
+                justify-content: space-between;
+                gap: 1rem;
+                .rater{
+                    padding: 0.5rem;
+                    p{
+                        width: unset;
+                    }
+                }
+            }
+        }
+        .about{
+            flex-direction: row;
+            gap: 2rem;
+            img{
+                width: 447px;
+                height: 445px;
+            }
+        }
+        footer{
+            .container{
+                padding-top: 2.44rem;
+                padding-bottom: 2.44rem;
+                gap: unset;
+                .texts-and-links{
+                    grid-template-columns: auto auto auto;
+                    gap: 4rem;
+                    align-items: unset;
+                    h5{
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
