@@ -19,14 +19,6 @@ test('initializeTimes fn return the correct values', () => {
   expect(available_times).toStrictEqual(['17:00','18:00','19:00','20:00','21:00','22:00'])
 });
 
-test('updateTimes fn return the correct values', () => {
-
-  render(<BookingForm times_reducer_obj={{availableTimes : ['17:00']}} />);
-
-  expect(true).toBe(true)
-
-});
-
 test('input fields in the booking form having the required attribute', () => {
   let times_reducer_obj = {
     availableTimes : ['17:00', '18:00' , '19:00' , '20:00' , '21:00' , '22:00'],

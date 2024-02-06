@@ -37,7 +37,7 @@ header{
         }
         nav{
             position: absolute;
-            left: 0;//0.75rem
+            left: 0;
             top: 0;
             background-color: beige;
             height: 100vh;
@@ -150,10 +150,9 @@ footer{
 
                 ul{
                     background-color: white;
-                    // gap: unset;
                     @include flex(row,unset,center);
 
-                    gap: 1.75rem; //28px
+                    gap: 1.75rem;
                     padding: 0;
                     align-items: center;
                     height: 100%;
