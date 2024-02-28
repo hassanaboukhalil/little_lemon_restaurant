@@ -47,7 +47,8 @@
 .form-div {
   color: white;
 }
-.form-div select, .form-div input {
+.form-div select,
+.form-div input {
   color: black;
   background-color: white;
   font-size: var(--form-input);

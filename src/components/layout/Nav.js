@@ -1,23 +1,53 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Nav() {
     let navRef = useRef(null)
     let besideNavRef = useRef(null)
-
-    if(window.matchMedia("(max-width: 992px)").matches){
-
-    }
+    let navHome = useRef(null)
+    let navAbout = useRef(null)
+    let navReservations = useRef(null)
 
     function openNav(){
-        besideNavRef.current.style.display = 'unset';
-        navRef.current.style.display = 'unset';
+        besideNavRef.style.display = 'unset';
+        navRef.style.display = 'unset';
     }
 
     function closeNav(){
-        besideNavRef.current.style.display = 'none';
-        navRef.current.style.display = 'none';
+        besideNavRef.style.display = 'none';
+        navRef.style.display = 'none';
     }
+
+    useEffect(() => {
+        let arr = [navHome.current, navAbout.current, navReservations.current]
+        function changeNav(navNb){
+            for(let i = 0 ; i < arr.length ; i++){
+                if(i === navNb){
+                    arr[i].style.backgroundColor = "#495e57";
+                    arr[i].style.color = "white";
+                    arr[i].style.borderRadius = "9px";
+                    arr[i].style.fontWeight = "normal";
+                    arr[i].style.padding = "2px 8px";
+                    console.log(navNb)
+                    continue
+                }
+                arr[i].style.backgroundColor = "unset";
+                arr[i].style.color = "unset";
+                arr[i].style.borderRadius = "unset";
+                arr[i].style.fontWeight = "unset";
+                arr[i].style.padding = "unset";
+            }
+        }
+        navHome.current.addEventListener('click', () => { changeNav(0) });
+        navAbout.current.addEventListener('click', () => {
+            changeNav(0) ;
+            setTimeout(() => {
+                document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        });
+        navReservations.current.addEventListener('click', () => { changeNav(2) });
+        changeNav(0)
+    },[])
 
     return (
         window.matchMedia("(min-width: 992px)").matches ?
@@ -25,19 +55,19 @@ export default function Nav() {
             <nav role='navigation' ref={navRef}>
                 <ul>
                     <li>
-                        <Link to='/' className='nav-item' aria-label="On Click">Home</Link>
+                        <Link to='/' ref={navHome} aria-label="On Click">Home</Link>
                     </li>
                     <li>
-                        <a href='#About' role='button' aria-label="On Click">About</a>
+                        <Link to='/' ref={navAbout} aria-label="On Click">About</Link>
                     </li>
                     <li>
                         <a href='#Menu' role='button' aria-label="On Click">Menu</a>
                     </li>
                     <li>
-                        <a href='#Reservation' role='button' aria-label="On Click">Reservations</a>
+                        <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>
                     </li>
                     <li>
-                        <a href='#OrderOnline' role='button' aria-label="On Click">Order Online</a>
+                        <a href='#OrderOnline' role='button' aria-label="On Click">Contact</a>
                     </li>
                     <li>
                         <a href='#Login' role='button' aria-label="On Click">Login</a>
@@ -53,19 +83,19 @@ export default function Nav() {
             <nav role='navigation' ref={navRef}>
                 <ul>
                     <li>
-                        <Link to='/' className='nav-item' aria-label="On Click">Home</Link>
+                        <Link to='/' ref={navHome} aria-label="On Click">Home</Link>
                     </li>
                     <li>
-                        <a href='#About' role='button' aria-label="On Click">About</a>
+                        <Link to='/' ref={navAbout} aria-label="On Click">About</Link>
                     </li>
                     <li>
                         <a href='#Menu' role='button' aria-label="On Click">Menu</a>
                     </li>
                     <li>
-                        <a href='#Reservation' role='button' aria-label="On Click">Reservations</a>
+                        <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>
                     </li>
                     <li>
-                        <a href='#OrderOnline' role='button' aria-label="On Click">Order Online</a>
+                        <a href='#OrderOnline' role='button' aria-label="On Click">Contact</a>
                     </li>
                     <li>
                         <a href='#Login' role='button' aria-label="On Click">Login</a>

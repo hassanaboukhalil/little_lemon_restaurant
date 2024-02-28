@@ -99,7 +99,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.9375rem;
-  border-top: solid 2px #EDEFEE;
+  border-top: solid 2px #edefee;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -183,7 +183,7 @@
   }
   .highlights .food-card {
     flex-direction: column;
-    background-color: #EDEFEE;
+    background-color: #edefee;
     align-items: unset;
     gap: unset;
     border-top: unset;
@@ -199,7 +199,7 @@
   }
   .highlights .food-card .texts .des:not(.price) {
     font-weight: normal;
-    color: #495E57;
+    color: #495e57;
   }
   .highlights .food-card img {
     order: 1;
