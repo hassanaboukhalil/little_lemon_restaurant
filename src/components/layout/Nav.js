@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Nav() {
@@ -9,6 +9,11 @@ export default function Nav() {
     let navAbout = useRef(null)
     let navReservations = useRef(null)
 
+    const [pageName, setPageName] = useState(() => {
+        const storedName = localStorage.getItem('page-name');
+        return storedName;
+    });
+
     function openNav(){
         besideNavRef.current.style.display = 'unset';
         navRef.current.style.display = 'unset';
@@ -18,6 +23,10 @@ export default function Nav() {
         besideNavRef.current.style.display = 'none';
         navRef.current.style.display = 'none';
     }
+
+    useEffect(() => {
+        localStorage.setItem('page-name', pageName);
+    }, [pageName]);
 
     useEffect(() => {
         let arr = [navHome.current, navAbout.current, navReservations.current]
@@ -42,16 +51,28 @@ export default function Nav() {
                 closeNav()
             }
         }
-        navHome.current.addEventListener('click', () => { changeNav(0) });
+        navHome.current.addEventListener('click', () => {
+            changeNav(0)
+            setPageName('home')
+        });
         navAbout.current.addEventListener('click', () => {
             changeNav(0)
             setTimeout(() => {
                 document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
             }, 100);
+            setPageName('about')
         });
-        navReservations.current.addEventListener('click', () => { changeNav(2) });
-        changeNav(0)
-        logo.current.addEventListener('click', () => { changeNav(0) });
+        navReservations.current.addEventListener('click', () => { 
+            changeNav(2)
+            setPageName('reservations')
+        });
+        logo.current.addEventListener('click', () => { 
+            changeNav(0)
+            setPageName('home')
+        });
+        if(pageName === 'home')navHome.current.click()
+        else if(pageName === 'about')navAbout.current.click()
+        else if(pageName === 'reservations')navReservations.current.click()
     },[])
 
     return (
