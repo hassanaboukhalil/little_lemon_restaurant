@@ -1,7 +1,7 @@
 import { Button, FormControl, FormErrorMessage, FormLabel, Input, Select, Heading, Box, Progress, Stack, Text, InputGroup, InputLeftAddon } from '@chakra-ui/react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import React from 'react'
+import React, { useState } from 'react'
 import AvailableTimes from './availableTimes'
 import {
     Step,
@@ -51,10 +51,9 @@ function BookingForm({times_reducer_obj , submitForm }) {
             firstName: Yup.string().min(2, "the first name should contain at least 2 letters").max(10).required("Required"),
             lastName: Yup.string().min(2, "the last name should contain at least 2 letters").max(10).required("Required"),
             email: Yup.string().email("Invalid email address").required("Required"),
-            // phone: Yup.required("Required")
+            phone: Yup.string()
         })
     })
-
 
     const { activeStep, setActiveStep } = useSteps({
         index: 0,
@@ -147,26 +146,19 @@ function BookingForm({times_reducer_obj , submitForm }) {
                                 <Input type='email' {...formik.getFieldProps("email")} aria-label='Enter the email address' required/>
                                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
                             </FormControl>
-                            <FormControl role='group'>
+                            <FormControl role='group' isInvalid={formik.errors.phone}>
                                 <FormLabel>Phone Number</FormLabel>
-                                {/* <InputGroup>
-                                    <InputLeftAddon />
-                                    <Input
-                                        type="tel"
-                                        placeholder="Enter phone number"
-                                        {...formik.getFieldProps("phone")}
-                                    />
-                                </InputGroup> */}
                                 <PhoneInput
-                                    placeholder="Enter phone number"
+                                    className='phone-input chakra-input css-1cjy4zv'
                                     addInternationalOption={false}
                                     name="phone"
+                                    defaultCountry="US"
                                     value={formik.values.phone}
-                                    onChange={formik.handleChange}
+                                    onChange={(value) => formik.setFieldValue('phone', value)}
                                 />
                                 <FormErrorMessage>{formik.errors.phone}</FormErrorMessage>
                             </FormControl>
-                            <Button w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.date || formik.errors.guests_nb) ? true : false} isLoading={false} aria-label="On Click" onClick={contactForm}>
+                            <Button type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.firstName || formik.errors.lastName || formik.errors.email) ? true : false} isLoading={false} aria-label="On Click" onClick={contactForm}>
                                 Submit
                             </Button>
                         </>

@@ -70,6 +70,12 @@
 .form-div .booking-form label {
   font-size: var(--form-label);
 }
+.form-div .booking-form .phone-input {
+  padding-right: 0;
+}
+.form-div .booking-form .phone-input input {
+  height: 100%;
+}
 
 @media (width > 600px) {
   .form-div .booking-form {
