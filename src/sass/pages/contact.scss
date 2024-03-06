@@ -1,0 +1,109 @@
+@use "../helpers/colors" as *;
+@use "../helpers/fonts" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.contact-section {
+  background-color: $primary-color1;
+  .container {
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .title {
+      font-size: var(--sub-title) !important;
+      color: $primary-color2;
+      margin-bottom: 1rem;
+    }
+    .contact-flex {
+      @include flex(column, space-between, unset);
+    }
+    .paragraph {
+      width: 85%;
+      font-size: var(--des);
+    }
+    .div-links {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: grid;
+      gap: 1.5rem;
+      .link {
+        @include flex(row, unset, center);
+        gap: 1.5rem;
+      }
+    }
+    .img {
+      margin: 3rem 0;
+    }
+    .contact-form {
+      background-color: white;
+      color: black;
+      display: grid;
+      gap: 1.2rem;
+      border-radius: 20px;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      font-size: 18px;
+      label {
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        border: 0.4px solid black;
+      }
+      .phone-input {
+        > div {
+          border: 0.4px solid black;
+        }
+        input {
+          border: unset;
+        }
+      }
+      .btn {
+        background-color: $primary-color2;
+        color: black;
+      }
+    }
+  }
+}
+
+@media (width > 600px) {
+  .contact-section {
+    .container {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      .contact-flex {
+        flex-direction: row !important;
+        gap: 1rem;
+        > div {
+          width: 40%;
+        }
+        form {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (width > 1050px) {
+  .contact-section {
+    .container {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      .paragraph {
+        width: unset;
+      }
+      .contact-flex {
+        flex-direction: row !important;
+        gap: 1rem;
+        > div {
+          width: 40%;
+        }
+        form {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

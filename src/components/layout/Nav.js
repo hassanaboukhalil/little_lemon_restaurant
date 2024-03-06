@@ -8,6 +8,7 @@ export default function Nav() {
     let navHome = useRef(null)
     let navAbout = useRef(null)
     let navReservations = useRef(null)
+    let navContact = useRef(null)
 
     const [pageName, setPageName] = useState(() => {
         const storedName = localStorage.getItem('page-name');
@@ -29,7 +30,7 @@ export default function Nav() {
     }, [pageName]);
 
     useEffect(() => {
-        let arr = [navHome.current, navAbout.current, navReservations.current]
+        let arr = [navHome.current, navAbout.current, navReservations.current, navContact.current]
         function changeNav(navNb){
             for(let i = 0 ; i < arr.length ; i++){
                 if(i === navNb){
@@ -38,7 +39,6 @@ export default function Nav() {
                     arr[i].style.borderRadius = "9px";
                     arr[i].style.fontWeight = "normal";
                     arr[i].style.padding = "2px 8px";
-                    console.log(navNb)
                     continue
                 }
                 arr[i].style.backgroundColor = "unset";
@@ -62,17 +62,22 @@ export default function Nav() {
             }, 100);
             setPageName('about')
         });
-        navReservations.current.addEventListener('click', () => { 
+        navReservations.current.addEventListener('click', () => {
             changeNav(2)
             setPageName('reservations')
         });
-        logo.current.addEventListener('click', () => { 
+        logo.current.addEventListener('click', () => {
             changeNav(0)
             setPageName('home')
+        });
+        navContact.current.addEventListener('click', () => {
+            changeNav(3)
+            setPageName('contact')
         });
         if(pageName === 'home')navHome.current.click()
         else if(pageName === 'about')navAbout.current.click()
         else if(pageName === 'reservations')navReservations.current.click()
+        else if(pageName === 'contact')navContact.current.click()
     },[])
 
     return (
@@ -96,7 +101,7 @@ export default function Nav() {
                         <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>
                     </li>
                     <li>
-                        <a href='#OrderOnline' role='button' aria-label="On Click">Contact</a>
+                        <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
                     <li>
                         <a href='#Login' role='button' aria-label="On Click">Login</a>
@@ -127,7 +132,7 @@ export default function Nav() {
                         <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>
                     </li>
                     <li>
-                        <a href='#OrderOnline' role='button' aria-label="On Click">Contact</a>
+                        <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
                     <li>
                         <a href='#Login' role='button' aria-label="On Click">Login</a>
