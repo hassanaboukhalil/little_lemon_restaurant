@@ -1,0 +1,121 @@
+:root {
+  --nav: 20px;
+  --title: 64px;
+  --sub-title: 40px;
+  --des: 18px;
+  --btn: 16px;
+  --card-title: 18px;
+  --card-des: 16px;
+  --section-title: 30px;
+  --footer: 20px;
+  --form-title: 30px;
+  --form-label: 18px;
+  --form-input: 16px;
+}
+
+@media (width > 600px) {
+  :root {
+    --section-title: 50px;
+  }
+}
+@media (width > 992px) {
+  :root {
+    --title: 67px;
+    --section-title: 67px;
+    --btn: 18px;
+    --nav: 18px;
+  }
+}
+:root {
+  --container-padding-x: 1rem;
+}
+
+@media (width > 724px) {
+  :root {
+    --container-padding-x: 5.12rem;
+  }
+}
+@media (width > 1290px) {
+  :root {
+    --container-padding-x: 16rem;
+  }
+}
+.menu-section {
+  background-color: #495E57;
+}
+.menu-section .container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.menu-section .container .title {
+  font-size: var(--section-title);
+  color: #F4CE14;
+  text-align: center;
+  width: 90%;
+  font-weight: bold;
+}
+.menu-section .container .paragraph {
+  font-size: var(--des);
+  text-align: center;
+  color: white;
+}
+.menu-section .container .filter-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: unset;
+  width: 100%;
+}
+.menu-section .container .filter-btns .btn {
+  background-color: white;
+  font-size: 12px;
+  border: solid 1px yellow;
+  font-weight: bold;
+  padding: 3px 4px;
+  height: auto;
+  border-radius: 0;
+}
+.menu-section .container .food-grid {
+  gap: 1.5rem;
+}
+.menu-section .container .food-grid .food-card {
+  background-color: white;
+  padding: 0.5rem;
+}
+
+@media (width > 600px) {
+  .menu-section .container .title {
+    font-size: 30px;
+    width: 60%;
+  }
+  .menu-section .container .paragraph {
+    width: 70%;
+  }
+  .menu-section .container .filter-btns {
+    width: 70%;
+  }
+  .menu-section .container .food-grid .food-card {
+    background-color: #edefee;
+    padding: unset;
+  }
+  .menu-section .container .food-grid .food-card .texts {
+    gap: 1rem;
+  }
+  .menu-section .container .food-grid .food-card .texts .btns {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .menu-section .container .food-grid .food-card .texts .btns button {
+    font-weight: bold !important;
+  }
+}
+@media (width > 992px) {
+  .filter-btns {
+    width: 50% !important;
+  }
+}/*# sourceMappingURL=menu.css.map */

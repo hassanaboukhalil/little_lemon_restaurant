@@ -49,36 +49,6 @@
     font-size: var(--section-title);
     font-weight: bold;
   }
-  .food-grid {
-    display: grid;
-  }
-  .food-card {
-    @include flex(row, space-between, center);
-    gap: 0.9375rem;
-    border-top: solid 2px #edefee;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    .texts {
-      @include flex(column, unset, unset);
-      gap: 0.5rem;
-      h1 {
-        font-size: var(--card-title);
-        font-weight: bold;
-      }
-      .des {
-        font-size: var(--card-des);
-        color: $primary-color1;
-        font-weight: lighter;
-      }
-      .price {
-        color: $secondary-color1;
-      }
-    }
-    img {
-      width: 83px;
-      height: 83px;
-    }
-  }
 }
 
 .testimonials {
@@ -125,39 +95,6 @@
     padding-bottom: calc(var(--container-padding-x) / 2);
     .title-and-btn {
       padding-top: unset;
-    }
-    .food-grid {
-      grid-template-columns: auto auto;
-      justify-items: center;
-      gap: 2rem;
-    }
-    .food-card {
-      flex-direction: column;
-      background-color: #edefee;
-      align-items: unset;
-      gap: unset;
-      border-top: unset;
-      padding-top: unset;
-      padding-bottom: unset;
-      width: 264.67px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      .texts {
-        order: 2;
-        padding: 1.2rem 1rem;
-        .des:not(.price) {
-          font-weight: normal;
-          color: #495e57;
-        }
-      }
-      img {
-        order: 1;
-        width: 264.67px;
-        height: 185.26px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border: solid 1.5px;
-      }
     }
   }
 
@@ -208,11 +145,6 @@
       button {
         height: -webkit-fill-available;
       }
-    }
-    .food-grid {
-      grid-template-columns: auto auto auto;
-      justify-content: space-between;
-      gap: unset;
     }
   }
   .testimonials {

@@ -9,6 +9,7 @@ export default function Nav() {
     let navAbout = useRef(null)
     let navReservations = useRef(null)
     let navContact = useRef(null)
+    let navMenu = useRef(null)
 
     const [pageName, setPageName] = useState(() => {
         const storedName = localStorage.getItem('page-name');
@@ -30,7 +31,7 @@ export default function Nav() {
     }, [pageName]);
 
     useEffect(() => {
-        let arr = [navHome.current, navAbout.current, navReservations.current, navContact.current]
+        let arr = [navHome.current, navAbout.current, navReservations.current, navContact.current, navMenu.current]
         function changeNav(navNb){
             for(let i = 0 ; i < arr.length ; i++){
                 if(i === navNb){
@@ -74,10 +75,15 @@ export default function Nav() {
             changeNav(3)
             setPageName('contact')
         });
+        navMenu.current.addEventListener('click', () => {
+            changeNav(4)
+            setPageName('menu')
+        })
         if(pageName === 'home')navHome.current.click()
         else if(pageName === 'about')navAbout.current.click()
         else if(pageName === 'reservations')navReservations.current.click()
         else if(pageName === 'contact')navContact.current.click()
+        else if(pageName === 'menu')navMenu.current.click()
     },[])
 
     return (
@@ -95,7 +101,7 @@ export default function Nav() {
                         <Link to='/' ref={navAbout} aria-label="On Click">About</Link>
                     </li>
                     <li>
-                        <a href='#Menu' role='button' aria-label="On Click">Menu</a>
+                        <Link to='/menu-page' ref={navMenu} aria-label="On Click">Menu</Link>
                     </li>
                     <li>
                         <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>
@@ -126,7 +132,7 @@ export default function Nav() {
                         <Link to='/' ref={navAbout} aria-label="On Click">About</Link>
                     </li>
                     <li>
-                        <a href='#Menu' role='button' aria-label="On Click">Menu</a>
+                        <Link to='/menu-page' ref={navMenu} aria-label="On Click">Menu</Link>
                     </li>
                     <li>
                         <Link to='/booking-page' ref={navReservations} aria-label="On Click">Reservations</Link>

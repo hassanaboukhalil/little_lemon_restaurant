@@ -90,42 +90,6 @@
   font-size: var(--section-title);
   font-weight: bold;
 }
-.highlights .food-grid {
-  display: grid;
-}
-.highlights .food-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.9375rem;
-  border-top: solid 2px #edefee;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.highlights .food-card .texts {
-  display: flex;
-  flex-direction: column;
-  justify-content: unset;
-  align-items: unset;
-  gap: 0.5rem;
-}
-.highlights .food-card .texts h1 {
-  font-size: var(--card-title);
-  font-weight: bold;
-}
-.highlights .food-card .texts .des {
-  font-size: var(--card-des);
-  color: #495E57;
-  font-weight: lighter;
-}
-.highlights .food-card .texts .price {
-  color: #EE9972;
-}
-.highlights .food-card img {
-  width: 83px;
-  height: 83px;
-}
 
 .testimonials {
   padding-top: 2.44rem;
@@ -176,39 +140,6 @@
   .highlights .title-and-btn {
     padding-top: unset;
   }
-  .highlights .food-grid {
-    grid-template-columns: auto auto;
-    justify-items: center;
-    gap: 2rem;
-  }
-  .highlights .food-card {
-    flex-direction: column;
-    background-color: #edefee;
-    align-items: unset;
-    gap: unset;
-    border-top: unset;
-    padding-top: unset;
-    padding-bottom: unset;
-    width: 264.67px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  .highlights .food-card .texts {
-    order: 2;
-    padding: 1.2rem 1rem;
-  }
-  .highlights .food-card .texts .des:not(.price) {
-    font-weight: normal;
-    color: #495e57;
-  }
-  .highlights .food-card img {
-    order: 1;
-    width: 264.67px;
-    height: 185.26px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border: solid 1.5px;
-  }
   .testimonials .raters {
     padding-right: 0;
     padding-left: 0;
@@ -251,11 +182,6 @@
   }
   .highlights .title-and-btn button {
     height: -webkit-fill-available;
-  }
-  .highlights .food-grid {
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    gap: unset;
   }
   .testimonials .raters {
     grid-template-columns: auto auto auto auto;

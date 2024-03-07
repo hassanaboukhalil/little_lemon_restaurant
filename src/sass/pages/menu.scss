@@ -1,0 +1,85 @@
+@use "../helpers/colors" as *;
+@use "../helpers/fonts" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+.menu-section {
+  background-color: $primary-color1;
+  .container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    @include flex(column, space-between, center);
+    gap: 2rem;
+    .title {
+      font-size: var(--section-title);
+      color: $primary-color2;
+      text-align: center;
+      width: 90%;
+      font-weight: bold;
+    }
+    .paragraph {
+      font-size: var(--des);
+      text-align: center;
+      color: white;
+    }
+    .filter-btns {
+      @include flex(row, space-around, unset);
+      width: 100%;
+      .btn {
+        background-color: white;
+        font-size: 12px;
+        border: solid 1px yellow;
+        font-weight: bold;
+        padding: 3px 4px;
+        height: auto;
+        border-radius: 0;
+      }
+    }
+    .food-grid {
+      gap: 1.5rem;
+      //   padding: 1rem 0;
+      .food-card {
+        background-color: white;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (width > 600px) {
+  .menu-section {
+    .container {
+      .title {
+        font-size: 30px;
+        width: 60%;
+      }
+      .paragraph {
+        width: 70%;
+      }
+      .filter-btns {
+        width: 70%;
+      }
+      .food-grid {
+        .food-card {
+          background-color: #edefee;
+          padding: unset;
+          .texts {
+            gap: 1rem;
+            .btns {
+              flex-direction: column;
+              gap: 0.5rem;
+              button {
+                font-weight: bold !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width > 992px) {
+  .filter-btns {
+    width: 50% !important;
+  }
+}

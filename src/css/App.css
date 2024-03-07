@@ -144,8 +144,102 @@ footer ul {
   margin-left: auto;
 }
 
+.food-grid {
+  display: grid;
+}
+.food-grid .food-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9375rem;
+  border-top: solid 2px #edefee;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.food-grid .food-card .texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+  gap: 0.5rem;
+}
+.food-grid .food-card .texts .title-and-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: unset;
+}
+.food-grid .food-card .texts .title-and-price h1 {
+  font-size: var(--card-title);
+  font-weight: bold;
+}
+.food-grid .food-card .texts .title-and-price .price {
+  color: #EE9972;
+  margin-right: 1rem;
+}
+.food-grid .food-card .texts .des {
+  font-size: var(--card-des);
+  color: #495E57;
+}
+.food-grid .food-card .texts .btns {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: unset;
+}
+.food-grid .food-card .texts .btns .order-btn {
+  background-color: #F4CE14;
+}
+.food-grid .food-card .texts .btns .add-btn {
+  background-color: #c6c6c6;
+  margin-right: 1rem;
+}
+.food-grid .food-card img {
+  width: 83px;
+  height: 83px;
+}
+
 /* Media Queries */
 @media (width > 600px) {
+  .food-grid {
+    grid-template-columns: auto auto;
+    justify-items: center;
+    gap: 2rem;
+  }
+  .food-grid .food-card {
+    flex-direction: column;
+    background-color: #edefee;
+    align-items: unset;
+    gap: unset;
+    border-top: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    width: 264.67px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .food-grid .food-card .texts {
+    order: 2;
+    padding: 1.2rem 1rem;
+  }
+  .food-grid .food-card .texts .des:not(.price) {
+    font-weight: normal;
+    color: #495e57;
+  }
+  .food-grid .food-card .texts .price,
+  .food-grid .food-card .texts .add-btn {
+    margin-right: unset !important;
+  }
+  .food-grid .food-card img {
+    order: 1;
+    width: 264.67px;
+    height: 185.26px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: solid 1.5px;
+  }
   footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -206,6 +300,11 @@ footer ul {
   header .container nav ul li {
     border: none;
     padding: 0;
+  }
+  .food-grid {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: unset;
   }
   footer .container {
     padding-top: 2.44rem;
