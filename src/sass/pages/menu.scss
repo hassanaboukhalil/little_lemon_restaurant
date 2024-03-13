@@ -33,6 +33,9 @@
         height: auto;
         border-radius: 0;
       }
+      .btn:first-child {
+        background-color: $primary-color2;
+      }
     }
     .food-grid {
       gap: 1.5rem;

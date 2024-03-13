@@ -80,6 +80,9 @@
   height: auto;
   border-radius: 0;
 }
+.menu-section .container .filter-btns .btn:first-child {
+  background-color: #F4CE14;
+}
 .menu-section .container .food-grid {
   gap: 1.5rem;
 }

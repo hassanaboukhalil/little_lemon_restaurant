@@ -2,16 +2,16 @@ import { Button } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function FoodCard({card}) {
+function FoodCard({food}) {
   return (
-    <div className='food-card'>
+    <div className='food-card' key={food.id}>
         <div className='texts'>
             <div className='title-and-price'>
-              <h1>{card.name}</h1>
-              <p className='des price'>{card.price}</p>
+              <h1>{food.name}</h1>
+              <p className='des price'>{food.price}</p>
             </div>
             <p className='des'>
-                {card.description}
+                {food.des}
             </p>
             <div className='btns'>
               <Button className='order-btn'>
@@ -22,7 +22,7 @@ function FoodCard({card}) {
               </Button>
             </div>
         </div>
-        <img src={card.img_src} alt={card.name} />
+        <img src={food.src} alt={food.name} />
     </div>
   )
 }

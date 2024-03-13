@@ -3,33 +3,12 @@ import Main from '../layout/Main'
 import FoodCard from '../others/FoodCard'
 import FilterBtns from '../others/FilterBtns'
 import '../../css/menu.css';
-
-
-let cards = [
-    {
-        id: 1,
-        name: "Greek salad",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        price: "$12.99",
-        img_src: "./images/greek_salad.jpg"
-    },
-    {
-        id: 2,
-        name: "Brushetta",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        price: "$7.99",
-        img_src: "./images/lemon_dessert.jpg"
-    },
-    {
-        id: 3,
-        name: "Lemon Dessert",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        price: "$6.99",
-        img_src: "./images/lemon_dessert.jpg"
-    }
-]
+import { useSelector } from 'react-redux';
 
 export default function MenuPage() {
+
+    const foods = useSelector(state => state.foods.value);
+
   return (
     <Main>
         <section className="menu-section">
@@ -40,9 +19,9 @@ export default function MenuPage() {
                 </p>
                 <FilterBtns />
                 <div className='food-grid'>
-                    {cards.map(card => {
+                    {foods.map(food => {
                         return (
-                            <FoodCard card={card}/>
+                            <FoodCard food={food}/>
                         )
                     })}
                 </div>
