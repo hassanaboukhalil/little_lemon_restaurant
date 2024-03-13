@@ -3,25 +3,25 @@ import FoodCard from './FoodCard'
 
 let cards = [
     {
-        id: 1,
+        id: 0,
         name: "Greek salad",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+        des: "Crisp lettuce, juicy tomatoes, cucumbers, olives, and feta cheese tossed with tangy vinaigrette—a refreshing Mediterranean classic.",
         price: "$12.99",
-        img_src: "./images/greek_salad.jpg"
+        src: "./images/greek_salad.jpg"
+    },
+    {
+        id: 1,
+        name: "Bruchetta",
+        des: "Grilled bread rubbed with garlic, drizzled with olive oil, topped with diced tomatoes, basil, and balsamic glaze—a taste of Italy in every bite.",
+        price: "$7.99",
+        src: "./images/appetizers/bruchetta.png"
     },
     {
         id: 2,
-        name: "Brushetta",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        price: "$7.99",
-        img_src: "./images/lemon_dessert.jpg"
-    },
-    {
-        id: 3,
         name: "Lemon Dessert",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+        des: "A luscious marriage of tangy lemon curd atop a buttery crust, crowned with airy meringue—a citrusy symphony for dessert lovers.",
         price: "$6.99",
-        img_src: "./images/lemon_dessert.jpg"
+        src: "./images/lemon_dessert.jpg"
     }
 ]
 
@@ -34,9 +34,9 @@ function Highlights() {
             <button className='btn'>Online Menu</button>
         </div>
         <div className='food-grid'>
-            {cards.map(card => {
+            {cards.map(food => {
                 return (
-                    <FoodCard card={card}/>
+                    <FoodCard food={food}/>
                 )
             })}
         </div>

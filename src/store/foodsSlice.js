@@ -4,7 +4,7 @@ let all_food = [
     {
         id: 0,
         name: "Bruchetta",
-        des: "Our Bruschetta is a symphony of flavors, with grilled bread, garlic, olive oil, and a sprinkle of salt creating a perfect appetizer.",
+        des: "Grilled bread rubbed with garlic, drizzled with olive oil, topped with diced tomatoes, basil, and balsamic glaze—a taste of Italy in every bite.",
         src: "./images/appetizers/bruchetta.png",
         type: "appetizer",
         price: "$12.99"
@@ -12,7 +12,7 @@ let all_food = [
     {
         id: 1,
         name: "Deviled Eggs",
-        des: "Boiled eggs filled with creamy mayo, mustard, and paprika, garnished with chives or crispy bacon for added delight.",
+        des: "Perfectly boiled eggs filled with creamy mayo, mustard, and paprika, garnished with chives or bacon—a classic appetizer enjoyed by all.",
         src: "./images/appetizers/deviled_eggs.png",
         type: "appetizer",
         price: "$7.99"
@@ -20,7 +20,7 @@ let all_food = [
     {
         id: 2,
         name: "Mozzarella Sticks",
-        des: "Breaded mozzarella, fried to golden perfection, with a gooey center, served with marinara for dipping pleasure.",
+        des: "Golden-brown breaded mozzarella, fried to perfection, revealing a gooey center, served with marinara—a crispy, cheesy delight for all appetites.",
         src: "./images/appetizers/mozzarella_sticks.png",
         type: "appetizer",
         price: "$6.99"
@@ -28,7 +28,7 @@ let all_food = [
     {
         id: 3,
         name: "Bruchetta",
-        des: "Our Bruschetta is a symphony of flavors, with grilled bread, garlic, olive oil, and a sprinkle of salt creating a perfect appetizer.",
+        des: "Grilled bread rubbed with garlic, drizzled with olive oil, topped with diced tomatoes, basil, and balsamic glaze—a taste of Italy in every bite.",
         src: "./images/appetizers/bruchetta.png",
         type: "appetizer",
         price: "$12.99"
@@ -36,7 +36,7 @@ let all_food = [
     {
         id: 4,
         name: "Deviled Eggs",
-        des: "Boiled eggs filled with creamy mayo, mustard, and paprika, garnished with chives or crispy bacon for added delight.",
+        des: "Perfectly boiled eggs filled with creamy mayo, mustard, and paprika, garnished with chives or bacon—a classic appetizer enjoyed by all.",
         src: "./images/appetizers/deviled_eggs.png",
         type: "appetizer",
         price: "$7.99"
@@ -44,7 +44,7 @@ let all_food = [
     {
         id: 5,
         name: "Mozzarella Sticks",
-        des: "Breaded mozzarella, fried to golden perfection, with a gooey center, served with marinara for dipping pleasure.",
+        des: "Golden-brown breaded mozzarella, fried to perfection, revealing a gooey center, served with marinara—a crispy, cheesy delight for all appetites.",
         src: "./images/appetizers/mozzarella_sticks.png",
         type: "appetizer",
         price: "$6.99"
@@ -68,7 +68,7 @@ let all_food = [
     {
         id: 8,
         name: "Lemon Dessert",
-        des: "Tangy lemon curd nestled in a buttery crust, topped with fluffy meringue, a zesty delight for citrus enthusiasts.",
+        des: "A luscious marriage of tangy lemon curd atop a buttery crust, crowned with airy meringue—a citrusy symphony for dessert lovers.",
         src: "./images/deserts/lemon_dessert.jpg",
         type: "desert",
         price: "$6.99"
@@ -92,7 +92,7 @@ let all_food = [
     {
         id: 11,
         name: "Lemon Dessert",
-        des: "Tangy lemon curd nestled in a buttery crust, topped with fluffy meringue, a zesty delight for citrus enthusiasts.",
+        des: "A luscious marriage of tangy lemon curd atop a buttery crust, crowned with airy meringue—a citrusy symphony for dessert lovers.",
         src: "./images/deserts/lemon_dessert.jpg",
         type: "desert",
         price: "$6.99"
@@ -164,7 +164,7 @@ let all_food = [
     {
         id: 20,
         name: "Caprese Salad",
-        des: "Tropical sweetness in every sip, a refreshing thirst-quencher perfect for enjoying on a sunny day or mixing cocktails.",
+        des: "Juicy tomatoes, creamy mozzarella, fragrant basil, drizzled with balsamic glaze and olive oil—a taste of Italy in every bite.",
         src: "./images/salads/caprese-salad.png",
         type: "salad",
         price: "$6.99"
@@ -188,7 +188,7 @@ let all_food = [
     {
         id: 23,
         name: "Caprese Salad",
-        des: "Tropical sweetness in every sip, a refreshing thirst-quencher perfect for enjoying on a sunny day or mixing cocktails.",
+        des: "Juicy tomatoes, creamy mozzarella, fragrant basil, drizzled with balsamic glaze and olive oil—a taste of Italy in every bite.",
         src: "./images/salads/caprese-salad.png",
         type: "salad",
         price: "$6.99"
