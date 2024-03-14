@@ -37,6 +37,15 @@
       }
     }
   }
+  .phone-input {
+    > div {
+      // border: 0.4px solid black;
+    }
+    input {
+      border: unset;
+      padding: 0 !important;
+    }
+  }
 }
 
 @media (width > 600px) {

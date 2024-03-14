@@ -75,6 +75,10 @@
   font-weight: bold;
   color: black;
 }
+.login-section .phone-input input {
+  border: unset;
+  padding: 0 !important;
+}
 
 @media (width > 600px) {
   .login-section .login-div {
