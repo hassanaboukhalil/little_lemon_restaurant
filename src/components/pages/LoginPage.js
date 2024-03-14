@@ -2,7 +2,7 @@ import React from 'react'
 import Main from '../layout/Main'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { Button, FormControl, FormErrorMessage, FormLabel, Heading, Input } from '@chakra-ui/react'
+import { Button, FormControl, FormErrorMessage, Heading, Input } from '@chakra-ui/react'
 import '../../css/login.css';
 
 export default function LoginPage() {
@@ -31,7 +31,6 @@ export default function LoginPage() {
     <Main>
         <section className="login-section">
             <div className='container login-div'>
-
                 <form className='login-form' onSubmit={handle_submit}>
                     <Heading className='title' w="100%">Login</Heading>
                     <FormControl className='email' role='group' isInvalid={formik.errors.email}>
@@ -50,7 +49,6 @@ export default function LoginPage() {
                         Sign Up
                     </Button>
                 </form>
-
             </div>
         </section>
     </Main>
