@@ -4,8 +4,11 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Button, FormControl, FormErrorMessage, Heading, Input } from '@chakra-ui/react'
 import '../../css/login.css';
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+
+    const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -41,11 +44,11 @@ export default function LoginPage() {
                         <Input type='password' placeholder='Password' {...formik.getFieldProps("password")} aria-label='Enter the password' required/>
                         <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
                     </FormControl>
-                    <Button className='btn' type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.email || formik.errors.password) ? true : false} isLoading={false} aria-label="On Click">
+                    <Button className='btn' type="submit" w="100%" bg="#7f5ad5" color="white" isDisabled={(formik.errors.email || formik.errors.password || !formik.values.email || !formik.values.password) ? true : false} isLoading={false} aria-label="On Click">
                         Login
                     </Button>
                     <p className='question'>Don't have account ?</p>
-                    <Button className='btn' w="100%" bg="#7f5ad5" color="white" isLoading={false} aria-label="On Click">
+                    <Button className='btn' onClick={() => navigate('/signup')} w="100%" bg="#7f5ad5" color="white" isLoading={false} aria-label="On Click">
                         Sign Up
                     </Button>
                 </form>
