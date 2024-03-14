@@ -1,0 +1,129 @@
+:root {
+  --nav: 20px;
+  --title: 64px;
+  --sub-title: 40px;
+  --des: 18px;
+  --btn: 16px;
+  --card-title: 18px;
+  --card-des: 16px;
+  --section-title: 30px;
+  --footer: 20px;
+  --form-title: 30px;
+  --form-label: 18px;
+  --form-input: 16px;
+}
+
+@media (width > 600px) {
+  :root {
+    --section-title: 50px;
+  }
+}
+@media (width > 992px) {
+  :root {
+    --title: 67px;
+    --section-title: 67px;
+    --btn: 18px;
+    --nav: 18px;
+  }
+}
+:root {
+  --container-padding-x: 1rem;
+}
+
+@media (width > 724px) {
+  :root {
+    --container-padding-x: 5.12rem;
+  }
+}
+@media (width > 1290px) {
+  :root {
+    --container-padding-x: 16rem;
+  }
+}
+.login-section {
+  background-color: #495E57 !important;
+  color: black;
+}
+.login-section .login-div {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.login-section .login-div .login-form {
+  background-color: #D9D9D9;
+  width: 100%;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0.5rem;
+}
+.login-section .login-div .login-form .title,
+.login-section .login-div .login-form .question {
+  color: black;
+  text-align: center;
+}
+.login-section .login-div .login-form .question {
+  font-weight: bold;
+  padding-top: 1rem;
+}
+.login-section .login-div .login-form input {
+  background-color: white;
+}
+.login-section .login-div .login-form .email {
+  padding-top: 2rem;
+}
+.login-section .login-div .login-form button {
+  background-color: #F4CE14;
+  font-weight: bold;
+  color: black;
+}
+
+@media (width > 600px) {
+  .login-section .login-div {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .login-section .login-div .login-form {
+    padding: 3rem 4rem;
+    gap: 2.5rem;
+  }
+  .login-section .login-div .login-form input,
+  .login-section .login-div .login-form .question {
+    font-size: 22px;
+  }
+  .login-section .login-div .login-form input {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+  .login-section .login-div .login-form .question {
+    padding-top: 2rem;
+  }
+  .login-section .login-div .login-form button {
+    font-size: 20px;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+}
+@media (width > 992px) {
+  .login-section .login-div {
+    width: 80%;
+  }
+  .login-section .login-div .login-form {
+    padding: 3rem 4rem;
+    gap: 2.5rem;
+  }
+  .login-section .login-div .login-form input,
+  .login-section .login-div .login-form .question {
+    font-size: 22px;
+  }
+  .login-section .login-div .login-form input {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+  .login-section .login-div .login-form .question {
+    padding-top: 2rem;
+  }
+  .login-section .login-div .login-form button {
+    font-size: 20px;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+}/*# sourceMappingURL=login.css.map */

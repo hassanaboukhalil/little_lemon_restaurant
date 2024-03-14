@@ -1,0 +1,97 @@
+@use "../helpers/colors" as *;
+@use "../helpers/fonts" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.login-section {
+  background-color: $primary-color1 !important;
+  color: black;
+  .login-div {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    .login-form {
+      background-color: $secondary-color3;
+      width: 100%;
+      display: grid;
+      gap: 1.5rem;
+      padding: 2rem 0.5rem;
+      .title,
+      .question {
+        color: black;
+        text-align: center;
+      }
+      .question {
+        font-weight: bold;
+        padding-top: 1rem;
+      }
+      input {
+        background-color: white;
+      }
+      .email {
+        padding-top: 2rem;
+      }
+      button {
+        background-color: $primary-color2;
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+}
+
+@media (width > 600px) {
+  .login-section {
+    .login-div {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      .login-form {
+        padding: 3rem 4rem;
+        gap: 2.5rem;
+        input,
+        .question {
+          font-size: 22px;
+        }
+        input {
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+        .question {
+          padding-top: 2rem;
+        }
+        button {
+          font-size: 20px;
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media (width > 992px) {
+  .login-section {
+    .login-div {
+      width: 80%;
+      .login-form {
+        padding: 3rem 4rem;
+        gap: 2.5rem;
+        input,
+        .question {
+          font-size: 22px;
+        }
+        input {
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+        .question {
+          padding-top: 2rem;
+        }
+        button {
+          font-size: 20px;
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+      }
+    }
+  }
+}
