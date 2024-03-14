@@ -8,6 +8,7 @@ import Footer from './components/layout/Footer';
 import ConfirmedBooking from './components/pages/ConfirmedBooking';
 import ContactPage from './components/pages/ContactPage';
 import MenuPage from './components/pages/MenuPage';
+import LoginPage from './components/pages/LoginPage';
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/confirmed-booking' element={<ConfirmedBooking />} />
           <Route path='/contact-page' element={<ContactPage />} />
           <Route path='/menu-page' element={<MenuPage />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
         <Footer />
     </ChakraProvider>

@@ -10,6 +10,7 @@ export default function Nav() {
     let navReservations = useRef(null)
     let navContact = useRef(null)
     let navMenu = useRef(null)
+    let navLogin = useRef(null)
 
     const [pageName, setPageName] = useState(() => {
         const storedName = localStorage.getItem('page-name');
@@ -31,59 +32,87 @@ export default function Nav() {
     }, [pageName]);
 
     useEffect(() => {
-        let arr = [navHome.current, navAbout.current, navReservations.current, navContact.current, navMenu.current]
+        let arr = [
+            {
+                el: navHome.current,
+                styleItem: 0,
+                toPage: "home"
+            },
+            {
+                el: logo.current,
+                styleItem: 0,
+                toPage: "home"
+            },
+            {
+                el: navAbout.current,
+                styleItem: 0,
+                toPage: "about"
+            },
+            {
+                el: navMenu.current,
+                styleItem: 3,
+                toPage: "menu"
+            },
+            {
+                el: navReservations.current,
+                styleItem: 4,
+                toPage: "reservations"
+            },
+            {
+                el: navContact.current,
+                styleItem: 5,
+                toPage: "contact"
+            },
+            {
+                el: navLogin.current,
+                styleItem: 6,
+                toPage: "login"
+            }
+        ]
+
         function changeNav(navNb){
-            for(let i = 0 ; i < arr.length ; i++){
+            let arrRef = []
+            arr.forEach((item) => arrRef.push(item.el))
+            for(let i = 0 ; i < arrRef.length ; i++){
                 if(i === navNb){
-                    arr[i].style.backgroundColor = "#495e57";
-                    arr[i].style.color = "white";
-                    arr[i].style.borderRadius = "9px";
-                    arr[i].style.fontWeight = "normal";
-                    arr[i].style.padding = "2px 8px";
+                    arrRef[i].style.backgroundColor = "#495e57";
+                    arrRef[i].style.color = "white";
+                    arrRef[i].style.borderRadius = "9px";
+                    arrRef[i].style.fontWeight = "normal";
+                    arrRef[i].style.padding = "2px 8px";
                     continue
                 }
-                arr[i].style.backgroundColor = "unset";
-                arr[i].style.color = "unset";
-                arr[i].style.borderRadius = "unset";
-                arr[i].style.fontWeight = "unset";
-                arr[i].style.padding = "unset";
+                arrRef[i].style.backgroundColor = "unset";
+                arrRef[i].style.color = "unset";
+                arrRef[i].style.borderRadius = "unset";
+                arrRef[i].style.fontWeight = "unset";
+                arrRef[i].style.padding = "unset";
             }
             if(!window.matchMedia("(min-width: 992px)").matches){
                 closeNav()
             }
         }
-        navHome.current.addEventListener('click', () => {
-            changeNav(0)
-            setPageName('home')
-        });
-        navAbout.current.addEventListener('click', () => {
-            changeNav(0)
-            setTimeout(() => {
-                document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-            setPageName('about')
-        });
-        navReservations.current.addEventListener('click', () => {
-            changeNav(2)
-            setPageName('reservations')
-        });
-        logo.current.addEventListener('click', () => {
-            changeNav(0)
-            setPageName('home')
-        });
-        navContact.current.addEventListener('click', () => {
-            changeNav(3)
-            setPageName('contact')
-        });
-        navMenu.current.addEventListener('click', () => {
-            changeNav(4)
-            setPageName('menu')
-        })
+
+        function addingClickEvents(item){
+            item.el.addEventListener('click', () => {
+                changeNav(item.styleItem)
+                setPageName(item.toPage)
+                if(item.el === navAbout.current){
+                    setTimeout(() => {
+                        document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            });
+        }
+
+        arr.forEach((item) => addingClickEvents(item))
+
         if(pageName === 'home')navHome.current.click()
         else if(pageName === 'about')navAbout.current.click()
         else if(pageName === 'reservations')navReservations.current.click()
         else if(pageName === 'contact')navContact.current.click()
         else if(pageName === 'menu')navMenu.current.click()
+        else if(pageName === 'login')navLogin.current.click()
     },[])
 
     return (
@@ -110,7 +139,7 @@ export default function Nav() {
                         <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
                     <li>
-                        <a href='#Login' role='button' aria-label="On Click">Login</a>
+                        <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
                     </li>
                 </ul>
             </nav>
@@ -141,7 +170,7 @@ export default function Nav() {
                         <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
                     <li>
-                        <a href='#Login' role='button' aria-label="On Click">Login</a>
+                        <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
                     </li>
                 </ul>
             </nav>
