@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { authActions } from '../../store/authSlice'
 
 export default function Nav() {
     let navRef = useRef(null)
@@ -11,6 +13,9 @@ export default function Nav() {
     let navContact = useRef(null)
     let navMenu = useRef(null)
     let navLogin = useRef(null)
+
+    let isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+    let dispatch = useDispatch()
 
     const [pageName, setPageName] = useState(() => {
         const storedName = localStorage.getItem('page-name');
@@ -115,6 +120,11 @@ export default function Nav() {
         else if(pageName === 'login')navLogin.current.click()
     },[])
 
+    function logout(){
+        navHome.current.click()
+        dispatch(authActions.logout())
+    }
+
     return (
         window.matchMedia("(min-width: 992px)").matches ?
         <>
@@ -138,9 +148,21 @@ export default function Nav() {
                     <li>
                         <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
-                    <li>
-                        <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
-                    </li>
+                    {
+                        isLoggedIn ?
+                        <>
+                            <li>
+                                <Link to='/login' aria-label="On Click">Cart</Link>
+                            </li>
+                            <li>
+                                <Link to='/' onClick={logout} aria-label="On Click">Logout</Link>
+                            </li>
+                        </>
+                        :
+                        <li>
+                            <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
+                        </li>
+                    }
                 </ul>
             </nav>
         </>
@@ -169,9 +191,21 @@ export default function Nav() {
                     <li>
                         <Link to='/contact-page' ref={navContact} aria-label="On Click">Contact</Link>
                     </li>
-                    <li>
-                        <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
-                    </li>
+                    {
+                        isLoggedIn ?
+                        <>
+                            <li>
+                                <Link to='/login' ref={navLogin} aria-label="On Click">Cart</Link>
+                            </li>
+                            <li>
+                                <Link to='/' onClick={logout} aria-label="On Click">Logout</Link>
+                            </li>
+                        </>
+                        :
+                        <li>
+                            <Link to='/login' ref={navLogin} aria-label="On Click">Login</Link>
+                        </li>
+                    }
                 </ul>
             </nav>
             <div className='beside-nav' onClick={closeNav} ref={besideNavRef}>
