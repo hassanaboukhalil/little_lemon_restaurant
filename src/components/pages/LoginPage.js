@@ -5,10 +5,14 @@ import * as Yup from 'yup'
 import { Button, FormControl, FormErrorMessage, Heading, Input } from '@chakra-ui/react'
 import '../../css/login.css';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { authActions } from '../../store/authSlice'
 
 export default function LoginPage() {
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch()
 
     const formik = useFormik({
         initialValues: {
@@ -16,8 +20,9 @@ export default function LoginPage() {
             password: '',
         },
         onSubmit: (values) => {
-            alert('you login succesfuly')
-            formik.resetForm()
+            dispatch(authActions.login())
+            localStorage.setItem('page-name', 'home');
+            navigate('/')
         },
         validationSchema: Yup.object({
             email: Yup.string().email("Invalid email address").required("Required"),

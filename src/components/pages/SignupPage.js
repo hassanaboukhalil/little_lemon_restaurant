@@ -4,10 +4,14 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Button, FormControl, FormErrorMessage, Heading, Input } from '@chakra-ui/react'
 import PhoneInput from 'react-phone-number-input'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { authActions } from '../../store/authSlice'
 
 export default function SignupPage() {
     const navigate = useNavigate();
+
+    const dispatch = useDispatch()
 
     const formik = useFormik({
         initialValues: {
@@ -17,8 +21,8 @@ export default function SignupPage() {
             password: '',
         },
         onSubmit: (values) => {
-            alert('you signup succesfuly')
-            formik.resetForm()
+            dispatch(authActions.login())
+            navigate('/')
         },
         validationSchema: Yup.object({
             fullName: Yup.string().min(4, "the first name should contain at least 2 letters").max(10).required("Required"),

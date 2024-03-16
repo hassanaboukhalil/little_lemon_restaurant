@@ -43,16 +43,6 @@ export default function FilterBtns() {
 
     }
 
-    // useEffect(() => {
-    //     for(let i = 0 ; i < btns.length ; i++){
-    //         btns[i].ref = refs[i]
-    //         // btns[i].ref.current.style.backgroundColor = 'yellow'
-
-    //     }
-    //     // appetizersRef.current.style.backgroundColor = 'yellow'
-
-    // },[])
-
     function update_foods(btn){
         if(btn.name === "All Menu")dispatch(foodsActions.allFood())
         else if(btn.name === "Appetizers")dispatch(foodsActions.appetizers())
@@ -60,7 +50,6 @@ export default function FilterBtns() {
         else if(btn.name === "Deserts")dispatch(foodsActions.deserts())
         else if(btn.name === "Drinks")dispatch(foodsActions.drinks())
         changeMenuLinksColor(btn)
-        // btn.ref.current.style.backgroundColor = 'yellow'
     }
 
     function changeMenuLinksColor(choosenBtn){
