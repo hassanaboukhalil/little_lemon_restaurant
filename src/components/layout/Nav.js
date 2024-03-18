@@ -18,9 +18,26 @@ export default function Nav() {
     let dispatch = useDispatch()
 
     const [pageName, setPageName] = useState(() => {
-        const storedName = localStorage.getItem('page-name');
-        return storedName;
+        // const storedName = localStorage.getItem('page-name');
+        // localStorage.setItem('page-name', 'home');
+        if(localStorage.getItem('page-name'))return localStorage.getItem('page-name')
+        localStorage.setItem('page-name', 'home')
+        return localStorage.getItem('page-name');
     });
+
+
+    let loginNavObj = {
+        el: navLogin.current,
+        styleItem: 6,
+        toPage: "login"
+    }
+
+    // const [pageName, setPageName] = useState(localStorage.setItem('page-name', 'home'));    
+
+    // if(localStorage.getItem('isLoggedIn') === true){
+    //     dispatch(authActions.login())
+    // }
+
 
     function openNav(){
         besideNavRef.current.style.display = 'unset';
@@ -36,8 +53,9 @@ export default function Nav() {
         localStorage.setItem('page-name', pageName);
     }, [pageName]);
 
+    
     useEffect(() => {
-        let arr = [
+        let arrRef = [
             {
                 el: navHome.current,
                 styleItem: 0,
@@ -75,50 +93,74 @@ export default function Nav() {
             }
         ]
 
-        function changeNav(navNb){
-            let arrRef = []
-            arr.forEach((item) => arrRef.push(item.el))
+        if(localStorage.getItem('isLoggedIn') === true){
+            //arrRef.push(loginNavObj)
+            if(arrRef.indexOf(loginNavObj)){
+                let i = arrRef.indexOf(loginNavObj)
+                arrRef = [...arrRef.slice(0, i), ...arrRef.slice(i, arrRef.length)]
+                dispatch(authActions.login())
+            }
+        }
+        else{
+            if(!arrRef.indexOf(loginNavObj)){
+                arrRef.push(loginNavObj)
+            }
+        }
+
+        function changeNav(element){
+            // let arrRef = []
+            // arr.forEach((item) => arrRef.push(item.el))
+            if(element === navAbout.current || element === logo.current)element = navHome.current
             for(let i = 0 ; i < arrRef.length ; i++){
-                if(i === navNb){
-                    arrRef[i].style.backgroundColor = "#495e57";
-                    arrRef[i].style.color = "white";
-                    arrRef[i].style.borderRadius = "9px";
-                    arrRef[i].style.fontWeight = "normal";
-                    arrRef[i].style.padding = "2px 8px";
-                    continue
+                if(arrRef[i].el){
+                    if(arrRef[i].el === element){
+                        arrRef[i].el.style.backgroundColor = "#495e57";
+                        arrRef[i].el.style.color = "white";
+                        arrRef[i].el.style.borderRadius = "9px";
+                        arrRef[i].el.style.fontWeight = "normal";
+                        arrRef[i].el.style.padding = "2px 8px";
+                        continue
+                    }
+                    arrRef[i].el.style.backgroundColor = "unset";
+                    arrRef[i].el.style.color = "unset";
+                    arrRef[i].el.style.borderRadius = "unset";
+                    arrRef[i].el.style.fontWeight = "unset";
+                    arrRef[i].el.style.padding = "unset";
                 }
-                arrRef[i].style.backgroundColor = "unset";
-                arrRef[i].style.color = "unset";
-                arrRef[i].style.borderRadius = "unset";
-                arrRef[i].style.fontWeight = "unset";
-                arrRef[i].style.padding = "unset";
             }
             if(!window.matchMedia("(min-width: 992px)").matches){
                 closeNav()
             }
         }
-
+    
         function addingClickEvents(item){
-            item.el.addEventListener('click', () => {
-                changeNav(item.styleItem)
-                setPageName(item.toPage)
-                if(item.el === navAbout.current){
-                    setTimeout(() => {
-                        document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            });
+            if(item.el){
+                item.el.addEventListener('click', () => {
+                    changeNav(item.el)
+                    setPageName(item.toPage)
+                    if(item.el === navAbout.current){
+                        setTimeout(() => {
+                            document.getElementById('About').scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }
+                });
+            }
         }
 
-        arr.forEach((item) => addingClickEvents(item))
+        arrRef.forEach((item) =>  addingClickEvents(item))
 
-        if(pageName === 'home')navHome.current.click()
-        else if(pageName === 'about')navAbout.current.click()
-        else if(pageName === 'reservations')navReservations.current.click()
-        else if(pageName === 'contact')navContact.current.click()
-        else if(pageName === 'menu')navMenu.current.click()
-        else if(pageName === 'login')navLogin.current.click()
-    },[])
+        // if(pageName === 'home')navHome.current.click()
+        // else if(pageName === 'about')navAbout.current.click()
+        // else if(pageName === 'reservations')navReservations.current.click()
+        // else if(pageName === 'contact')navContact.current.click()
+        // else if(pageName === 'menu')navMenu.current.click()
+        // else if(pageName === 'login' && navLogin.current)navLogin.current.click()
+
+        navHome.current.click()
+
+    },[isLoggedIn,dispatch])
+
+
 
     function logout(){
         navHome.current.click()

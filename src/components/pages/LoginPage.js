@@ -20,9 +20,9 @@ export default function LoginPage() {
             password: '',
         },
         onSubmit: (values) => {
-            dispatch(authActions.login())
             localStorage.setItem('page-name', 'home');
             navigate('/')
+            dispatch(authActions.login())
         },
         validationSchema: Yup.object({
             email: Yup.string().email("Invalid email address").required("Required"),
