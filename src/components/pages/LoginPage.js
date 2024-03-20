@@ -7,6 +7,7 @@ import '../../css/login.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { authActions } from '../../store/authSlice'
+import axios from 'axios'
 
 export default function LoginPage() {
 
@@ -20,9 +21,27 @@ export default function LoginPage() {
             password: '',
         },
         onSubmit: (values) => {
-            localStorage.setItem('page-name', 'home');
-            navigate('/')
-            dispatch(authActions.login())
+            const handleLogin = async(email, password) => {
+                try{
+                    let response = await axios.get('/users.json')
+                    let users = response.data
+                    let user = users.find(user => user.email === email && user.password === password)
+                    if(user){
+                        localStorage.setItem('userData', JSON.stringify(user))
+                        localStorage.setItem('page-name', 'home');
+                        navigate('/')
+                        dispatch(authActions.login())
+                    }
+                    else{
+                        alert('Wrong email or password')
+                    }
+                }
+                catch(error){
+                    console.log("login failed : " + error);
+                }
+            }
+
+            handleLogin(values.email, values.password)
         },
         validationSchema: Yup.object({
             email: Yup.string().email("Invalid email address").required("Required"),

@@ -18,8 +18,6 @@ export default function Nav() {
     let dispatch = useDispatch()
 
     const [pageName, setPageName] = useState(() => {
-        // const storedName = localStorage.getItem('page-name');
-        // localStorage.setItem('page-name', 'home');
         if(localStorage.getItem('page-name'))return localStorage.getItem('page-name')
         localStorage.setItem('page-name', 'home')
         return localStorage.getItem('page-name');
@@ -31,13 +29,6 @@ export default function Nav() {
         styleItem: 6,
         toPage: "login"
     }
-
-    // const [pageName, setPageName] = useState(localStorage.setItem('page-name', 'home'));    
-
-    // if(localStorage.getItem('isLoggedIn') === true){
-    //     dispatch(authActions.login())
-    // }
-
 
     function openNav(){
         besideNavRef.current.style.display = 'unset';
@@ -94,7 +85,6 @@ export default function Nav() {
         ]
 
         if(localStorage.getItem('isLoggedIn') === true){
-            //arrRef.push(loginNavObj)
             if(arrRef.indexOf(loginNavObj)){
                 let i = arrRef.indexOf(loginNavObj)
                 arrRef = [...arrRef.slice(0, i), ...arrRef.slice(i, arrRef.length)]
@@ -108,8 +98,6 @@ export default function Nav() {
         }
 
         function changeNav(element){
-            // let arrRef = []
-            // arr.forEach((item) => arrRef.push(item.el))
             if(element === navAbout.current || element === logo.current)element = navHome.current
             for(let i = 0 ; i < arrRef.length ; i++){
                 if(arrRef[i].el){
@@ -148,16 +136,7 @@ export default function Nav() {
         }
 
         arrRef.forEach((item) =>  addingClickEvents(item))
-
-        // if(pageName === 'home')navHome.current.click()
-        // else if(pageName === 'about')navAbout.current.click()
-        // else if(pageName === 'reservations')navReservations.current.click()
-        // else if(pageName === 'contact')navContact.current.click()
-        // else if(pageName === 'menu')navMenu.current.click()
-        // else if(pageName === 'login' && navLogin.current)navLogin.current.click()
-
         navHome.current.click()
-
     },[isLoggedIn,dispatch])
 
 
