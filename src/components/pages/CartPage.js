@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Main from '../layout/Main'
-import { Button, FormControl, FormLabel, Img, Input } from '@chakra-ui/react'
-// import {img1 } from '../../../public/images/appetizers/bruchetta.png'
+import { Button, FormControl, Img, Input } from '@chakra-ui/react'
 import '../../css/cart.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartData } from '../../store/cartSlice';
@@ -20,62 +19,6 @@ export default function CartPage() {
         <section className="cart">
             <div className="container">
                 <div className='div-items'>
-                  {/* <div className='cart-item'>
-                    <Img src='./images/appetizers/bruchetta.png' alt='cart item' />
-                    <div className='txts'>
-                      <h4 className='title'>Greek salad</h4>
-                      <p className='type'>Salads</p>
-                    </div>
-                    <div className='add-remove'>
-                      <div className='minus-btn'>
-                        <span>-</span>
-                      </div>
-                      <span>1</span>
-                      <div className='plus-btn'>
-                        <span>+</span>
-                      </div>
-                    </div>
-                    <p className='price'>12.5$</p>
-                  </div>
-                  <div className='cart-item'>
-                    <Img src='./images/appetizers/bruchetta.png' alt='cart item' />
-                    <div className='txts'>
-                      <h4 className='title'>Greek salad</h4>
-                      <p className='type'>Salads</p>
-                    </div>
-                    <div className='add-remove'>
-                      <span className='minus-btn'>-</span>
-                      <span>1</span>
-                      <span className='plus-btn'>+</span>
-                    </div>
-                    <p className='price'>12.5$</p>
-                  </div>
-                  <div className='cart-item'>
-                    <Img src='./images/appetizers/bruchetta.png' alt='cart item' />
-                    <div className='txts'>
-                      <h4 className='title'>Greek salad</h4>
-                      <p className='type'>Salads</p>
-                    </div>
-                    <div className='add-remove'>
-                      <span className='minus-btn'>-</span>
-                      <span>1</span>
-                      <span className='plus-btn'>+</span>
-                    </div>
-                    <p className='price'>12.5$</p>
-                  </div>
-                  <div className='cart-item'>
-                    <Img src='./images/appetizers/bruchetta.png' alt='cart item' />
-                    <div className='txts'>
-                      <h4 className='title'>Greek salad</h4>
-                      <p className='type'>Salads</p>
-                    </div>
-                    <div className='add-remove'>
-                      <span className='minus-btn'>-</span>
-                      <span>1</span>
-                      <span className='plus-btn'>+</span>
-                    </div>
-                    <p className='price'>12.5$</p>
-                  </div> */}
                   {cart.data && (
                       <>
                         {cart.data.map((item) => (
@@ -96,22 +39,6 @@ export default function CartPage() {
                       </>
                     )
                   }
-
-                  {/* {cart.data.map((item) => (
-                    <div className='cart-item'>
-                      <Img src={item.Img} alt='cart item' />
-                      <div className='txts'>
-                        <h4 className='title'>{item.name}</h4>
-                        <p className='type'>{item.type}</p>
-                      </div>
-                      <div className='add-remove'>
-                        <span className='minus-btn'>-</span>
-                        <span>{item.amount}</span>
-                        <span className='plus-btn'>+</span>
-                      </div>
-                      <p className='price'>{item.price}</p>
-                    </div>
-                  ))} */}
                 </div>
                 <div className='pay-section'>
                   <div className='promocode-div'>
