@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "cart": [
+        {
+            "name" : "Greek salad",
+            "price" : "$12.99",
+            "type" : "Salads",
+            "amount" : "2",
+            "img" : "./images/salads/greek_salad.jpg"
+        },
+        {
+            "name" : "Mozzarella Sticks",
+            "price" : "$6.99",
+            "type" : "Appetizers",
+            "amount" : "3",
+            "img" : "./images/appetizers/mozzarella_sticks.png"
+        },
+        {
+            "name" : "Cocktail Juice",
+            "price" : "$12.99",
+            "type" : "Drinks",
+            "amount" : "1",
+            "img" : "./images/drinks/cocktail_juice.png"
+        },
+        {
+            "name" : "Orange Juice",
+            "price" : "$7.99",
+            "type" : "Drinks",
+            "amount" : "1",
+            "img" : "./images/drinks/orange_juice.png"
+        }
+    ]
+  }
+  
+]
