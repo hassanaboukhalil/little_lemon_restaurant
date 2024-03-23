@@ -13,6 +13,7 @@ export default function Nav() {
     let navContact = useRef(null)
     let navMenu = useRef(null)
     let navLogin = useRef(null)
+    let navCart = useRef(null)
 
     let isLoggedIn = useSelector(state => state.auth.isLoggedIn)
     let dispatch = useDispatch()
@@ -22,13 +23,6 @@ export default function Nav() {
         localStorage.setItem('page-name', 'home')
         return localStorage.getItem('page-name');
     });
-
-
-    let loginNavObj = {
-        el: navLogin.current,
-        styleItem: 6,
-        toPage: "login"
-    }
 
     function openNav(){
         besideNavRef.current.style.display = 'unset';
@@ -49,52 +43,65 @@ export default function Nav() {
         let arrRef = [
             {
                 el: navHome.current,
-                styleItem: 0,
                 toPage: "home"
             },
             {
                 el: logo.current,
-                styleItem: 0,
                 toPage: "home"
             },
             {
                 el: navAbout.current,
-                styleItem: 0,
                 toPage: "about"
             },
             {
                 el: navMenu.current,
-                styleItem: 3,
                 toPage: "menu"
             },
             {
                 el: navReservations.current,
-                styleItem: 4,
                 toPage: "reservations"
             },
             {
                 el: navContact.current,
-                styleItem: 5,
                 toPage: "contact"
             },
             {
                 el: navLogin.current,
-                styleItem: 6,
                 toPage: "login"
             }
         ]
 
-        if(localStorage.getItem('isLoggedIn') === true){
-            if(arrRef.indexOf(loginNavObj)){
+        let loginNavObj = {
+            el: navLogin.current,
+            toPage: "login"
+        }
+    
+        let cartNavObj = {
+            el: navCart.current,
+            toPage: "cart"
+        }
+
+        if(isLoggedIn){
+            if(arrRef.indexOf(loginNavObj) !== -1){
                 let i = arrRef.indexOf(loginNavObj)
                 arrRef = [...arrRef.slice(0, i), ...arrRef.slice(i, arrRef.length)]
-                dispatch(authActions.login())
             }
+            if(arrRef.indexOf(cartNavObj) === -1){
+                arrRef.push(cartNavObj)
+            }
+            // dispatch(authActions.login())
+            arrRef.push(cartNavObj)
+            
         }
         else{
-            if(!arrRef.indexOf(loginNavObj)){
+            if(arrRef.indexOf(loginNavObj) === -1){
                 arrRef.push(loginNavObj)
             }
+            if(arrRef.indexOf(cartNavObj) !== -1){
+                let i = arrRef.indexOf(cartNavObj)
+                arrRef = [...arrRef.slice(0, i), ...arrRef.slice(i, arrRef.length)]
+            }
+            // dispatch(authActions.logout())
         }
 
         function changeNav(element){
@@ -137,7 +144,7 @@ export default function Nav() {
 
         arrRef.forEach((item) =>  addingClickEvents(item))
         navHome.current.click()
-    },[isLoggedIn,dispatch])
+    },[isLoggedIn])
 
 
 
@@ -173,7 +180,7 @@ export default function Nav() {
                         isLoggedIn ?
                         <>
                             <li>
-                                <Link to='/login' aria-label="On Click">Cart</Link>
+                                <Link to='/cart' ref={navCart} aria-label="On Click">Cart</Link>
                             </li>
                             <li>
                                 <Link to='/' onClick={logout} aria-label="On Click">Logout</Link>
@@ -216,7 +223,7 @@ export default function Nav() {
                         isLoggedIn ?
                         <>
                             <li>
-                                <Link to='/login' ref={navLogin} aria-label="On Click">Cart</Link>
+                                <Link to='/cart' ref={navCart} aria-label="On Click">Cart</Link>
                             </li>
                             <li>
                                 <Link to='/' onClick={logout} aria-label="On Click">Logout</Link>

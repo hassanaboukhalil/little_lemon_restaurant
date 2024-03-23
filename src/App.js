@@ -10,6 +10,7 @@ import ContactPage from './components/pages/ContactPage';
 import MenuPage from './components/pages/MenuPage';
 import LoginPage from './components/pages/LoginPage';
 import SignupPage from './components/pages/SignupPage';
+import CartPage from './components/pages/CartPage';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/menu-page' element={<MenuPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />} />
+          <Route path='/cart' element={<CartPage />} />
         </Routes>
         <Footer />
     </ChakraProvider>

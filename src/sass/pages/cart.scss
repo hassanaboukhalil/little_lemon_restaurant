@@ -1,0 +1,117 @@
+@use "../helpers/colors" as *;
+@use "../helpers/fonts" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.cart .container {
+  background-color: $primary-color1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  button {
+    background-color: $primary-color2;
+    color: black;
+  }
+  .div-items {
+    padding: 0.5rem 1rem;
+    @include flex(column, unset, center);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-height: 13rem;
+    overflow: auto;
+    .cart-item {
+      border-radius: 20px;
+      width: 100%;
+      @include flex(row, space-around, center);
+      background-color: $secondary-color3;
+      padding: 0.2rem;
+      img {
+        width: 45px;
+        height: 45px;
+      }
+      .txts {
+        @include flex(column, space-between, start);
+        .title {
+          font-weight: bold;
+        }
+      }
+      .price {
+        font-weight: bold;
+      }
+      .add-remove {
+        @include flex(row, unset, center);
+        gap: 4px;
+        > span {
+          font-weight: bold;
+        }
+        .minus-btn,
+        .plus-btn {
+          background-color: #a59c9c;
+          color: white;
+          padding: 0.5rem;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          @include flex(row, center, center);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pay-section {
+    border-top: solid 1px white;
+    color: white;
+    padding-top: 2rem;
+    @include flex(column, space-around, unset);
+    gap: 2rem;
+    .promocode-div {
+      display: grid;
+      gap: 0.5rem;
+      .promocode-form {
+        @include flex(row, unset, unset);
+        gap: 0.3rem;
+        .promocode-input {
+          background-color: $secondary-color3;
+          color: black;
+        }
+        button {
+          width: 50%;
+        }
+      }
+    }
+    .all-prices-div {
+      display: grid;
+      gap: 1rem;
+      div {
+        @include flex(row, space-between, unset);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (width > 992px) {
+  .cart .container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    .pay-section {
+      margin-top: 5rem;
+    }
+  }
+}
+
+@media (width > 1050px) {
+  .cart .container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .div-items {
+      max-height: 18rem;
+      .cart-item img {
+        width: 109px;
+        height: 61px;
+      }
+    }
+    .pay-section {
+      margin-top: 3rem;
+    }
+  }
+}
