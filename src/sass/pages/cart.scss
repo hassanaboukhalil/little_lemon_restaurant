@@ -21,15 +21,19 @@
     .cart-item {
       border-radius: 20px;
       width: 100%;
-      @include flex(row, space-around, center);
+      @include flex(row, space-between, center);
       background-color: $secondary-color3;
-      padding: 0.2rem;
+      padding: 1rem;
+      .image-and-name {
+        display: flex;
+      }
       img {
         width: 45px;
         height: 45px;
       }
       .txts {
         @include flex(column, space-between, start);
+        padding-left: 1rem;
         .title {
           font-weight: bold;
         }
@@ -55,6 +59,11 @@
           cursor: pointer;
         }
       }
+      // .amount-and-price {
+      //   display: flex;
+      //   align-items: center;
+      //   gap: 1rem;
+      // }
     }
   }
   .pay-section {
@@ -93,6 +102,7 @@
   .cart .container {
     padding-top: 6rem;
     padding-bottom: 6rem;
+
     .pay-section {
       margin-top: 5rem;
     }
@@ -103,8 +113,15 @@
   .cart .container {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    .div-items,
+    .pay-section {
+      width: 50%;
+    }
     .div-items {
       max-height: 18rem;
+      order: 2;
       .cart-item img {
         width: 109px;
         height: 61px;
@@ -112,6 +129,7 @@
     }
     .pay-section {
       margin-top: 3rem;
+      margin-top: 0;
     }
   }
 }

@@ -23,17 +23,18 @@ export default function CartPage() {
                       <>
                         {cart.data.map((item) => (
                           <div className='cart-item'>
-                            <Img src={item.img} alt='cart item' />
-                            <div className='txts'>
-                              <h4 className='title'>{item.name}</h4>
-                              <p className='type'>{item.type}</p>
+                            <div className='image-and-name'>
+                              <Img src={item.img} alt='cart item' />
+                              <div className='txts'>
+                                <h4 className='title'>{item.name}</h4>
+                                <p className='price'>{item.price}</p>
+                              </div>
                             </div>
                             <div className='add-remove'>
                               <span className='minus-btn'>-</span>
                               <span>{item.amount}</span>
                               <span className='plus-btn'>+</span>
                             </div>
-                            <p className='price'>{item.price}</p>
                           </div>
                         ))}
                       </>
