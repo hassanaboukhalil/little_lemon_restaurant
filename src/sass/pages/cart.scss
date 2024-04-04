@@ -59,6 +59,17 @@
           cursor: pointer;
         }
       }
+      .amount-and-remove {
+        height: 100%;
+        display: grid;
+        align-items: center;
+        gap: 0.3rem;
+        .remove-btn {
+          padding: 0 0.3rem;
+          background-color: red;
+          color: white;
+        }
+      }
       // .amount-and-price {
       //   display: flex;
       //   align-items: center;

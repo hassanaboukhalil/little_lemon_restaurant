@@ -114,6 +114,17 @@
   align-items: center;
   cursor: pointer;
 }
+.cart .container .div-items .cart-item .amount-and-remove {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  gap: 0.3rem;
+}
+.cart .container .div-items .cart-item .amount-and-remove .remove-btn {
+  padding: 0 0.3rem;
+  background-color: red;
+  color: white;
+}
 .cart .container .pay-section {
   border-top: solid 1px white;
   color: white;

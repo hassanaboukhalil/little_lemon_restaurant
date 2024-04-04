@@ -30,10 +30,13 @@ export default function CartPage() {
                                 <p className='price'>{item.price}</p>
                               </div>
                             </div>
-                            <div className='add-remove'>
-                              <span className='minus-btn'>-</span>
-                              <span>{item.amount}</span>
-                              <span className='plus-btn'>+</span>
+                            <div className='amount-and-remove'>
+                              <div className='add-remove'>
+                                <span className='minus-btn'>-</span>
+                                <span>{item.amount}</span>
+                                <span className='plus-btn'>+</span>
+                              </div>
+                              <button className='remove-btn'>Remove</button>
                             </div>
                           </div>
                         ))}
