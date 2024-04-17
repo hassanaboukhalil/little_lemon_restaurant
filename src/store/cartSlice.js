@@ -9,6 +9,7 @@ export const fetchCartData = createAsyncThunk('cart/fetchCartData', async () => 
     return foods;
 });
 
+
 const initialState = {
     loading: false,
     error: null,
@@ -18,7 +19,38 @@ const initialState = {
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
-    reducers: {},
+    reducers: {
+      minusItem: (state, action) => {
+          let foodName = action.payload.name
+          for(let i = 0 ; i < state.data.length ; i++){
+            if(state.data[i].name === foodName){
+              state.data[i].amount--
+              if(state.data[i].amount === 0){
+                state.data = state.data.filter((item) => item.name !== foodName)
+              }
+              break
+            }
+          }
+      },
+      plusItem: (state, action) => {
+        let foodName = action.payload.name
+          for(let i = 0 ; i < state.data.length ; i++){
+            if(state.data[i].name === foodName){
+              state.data[i].amount++
+              break
+            }
+          }
+      },
+      removeItem: (state, action) => {
+        let foodName = action.payload.name
+          for(let i = 0 ; i < state.data.length ; i++){
+            if(state.data[i].name === foodName){
+              state.data = state.data.filter((item) => item.name !== foodName)
+              break
+            }
+          }
+      }
+    },
     extraReducers: builder => {
         builder
           .addCase(fetchCartData.pending, state => {
