@@ -1,39 +1,74 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer>
-        <div className='container'>
-          <img src='./images/logo2.png' alt='logo2' />
-          <div className='texts-and-links'>
-            <div>
-              <h5>Doormat Navigation</h5>
-              <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Order Online</li>
-                <li>Reservation</li>
-                <li>Login</li>
-              </ul>
-            </div>
-            <div>
-              <h5>Contact</h5>
-              <ul>
-                <li>Address</li>
-                <li>Phone Number</li>
-                <li>Email</li>
-              </ul>
-            </div>
-            <div>
-              <h5>Social Media Links</h5>
-              <ul>
-                <li>Address</li>
-                <li>Phone Number</li>
-                <li>Email</li>
-              </ul>
-            </div>
+      <div className="container">
+        <img src="./images/logo2.png" alt="logo2" />
+        <div className="texts-and-links">
+          <div>
+            <h5>Doormat Navigation</h5>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/menu-page">Order Online</Link>
+              </li>
+              <li>
+                <Link to="/booking-page">Reservation</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <Link to="/contact-page">Address</Link>
+              </li>
+              <li>
+                <Link to="/contact-page">Phone Number</Link>
+              </li>
+              <li>
+                <Link to="/contact-page">Email</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Social Media Links</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
     </footer>
-  )
+  );
 }
