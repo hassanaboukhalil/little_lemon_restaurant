@@ -4,6 +4,16 @@
 
 A modern, responsive Mediterranean restaurant website built with React, Redux Toolkit, and Chakra UI. Features online food ordering, table reservation, and user authentication.
 
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Installation & Setup](#installation--setup)
+- [Project Structure](#project-structure)
+- [License](#license)
+
 ## Project Overview
 
 Little Lemon Restaurant is a comprehensive web application that provides customers with an interactive platform to browse menu items, place food orders online, make table reservations, and create user accounts. The application is built with modern web technologies and follows responsive design principles to ensure optimal viewing experience across all device sizes.
