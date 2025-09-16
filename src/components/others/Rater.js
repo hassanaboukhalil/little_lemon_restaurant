@@ -1,7 +1,7 @@
 import { GridItem, HStack, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
-function Rater({ firstName, lastName, image }) {
+function Rater({ firstName, lastName, image, description }) {
   return (
     <GridItem className="rater">
       <VStack alignItems="start" spacing="1rem">
@@ -47,8 +47,7 @@ function Rater({ firstName, lastName, image }) {
           </VStack>
         </HStack>
         <Text fontSize="16px" w="15rem">
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit.
+          {description}
         </Text>
       </VStack>
     </GridItem>
