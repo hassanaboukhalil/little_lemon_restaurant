@@ -35,7 +35,10 @@ Little Lemon Restaurant is a comprehensive web application that provides custome
 
 ### Mobile View
 
-![Mobile View](./readme-images/little-lemon-website-on-small-screens.png)
+<div style="display: flex; gap: 20px;">
+  <img src="./readme-images/little-lemon-website-on-small-screens.png" alt="Mobile View" width="48%">
+  <img src="./readme-images/little-lemon-website-on-small-screens-navbar.png" alt="Mobile Navigation" width="48%">
+</div>
 
 ## Installation & Setup
 
