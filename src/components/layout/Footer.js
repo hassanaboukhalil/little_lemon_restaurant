@@ -25,13 +25,13 @@ export default function Footer() {
             <h5>Contact</h5>
             <ul>
               <li>
-                <Link to="/contact">Address</Link>
+                <Link to="/contact-page">Address</Link>
               </li>
               <li>
-                <Link to="/contact">Phone Number</Link>
+                <Link to="/contact-page">Phone Number</Link>
               </li>
               <li>
-                <Link to="/contact">Email</Link>
+                <Link to="/contact-page">Email</Link>
               </li>
             </ul>
           </div>
