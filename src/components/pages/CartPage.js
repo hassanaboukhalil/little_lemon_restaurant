@@ -162,7 +162,7 @@ export default function CartPage() {
               </>
             )}
           </div>
-          {(cart.data !== null || cart.data.length !== 0) && (
+          {cart.data && cart.data.length > 0 && (
             <div className="pay-section">
               <div className="promocode-div">
                 <h3>ENTER THE PROMOCODE</h3>
