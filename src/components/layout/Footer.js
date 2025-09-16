@@ -14,16 +14,10 @@ export default function Footer() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/menu-page">Order Online</Link>
               </li>
               <li>
-                <Link to="/menu">Order Online</Link>
-              </li>
-              <li>
-                <Link to="/booking">Reservation</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
+                <Link to="/booking-page">Reservation</Link>
               </li>
             </ul>
           </div>
